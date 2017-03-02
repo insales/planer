@@ -778,8 +778,6 @@
   COLLECTION MENU HORIZONTAL
 =========================================*/
 .collection-menu-horizontal-wrapper {
-  margin-bottom: 20px;
-  padding-bottom: 10px;
   position: relative;
 
   &:after {
@@ -797,6 +795,8 @@
 
 .collection-menu-horizontal {
   display: block;
+  background: $color-background-primary;
+  padding: 20px 20px 10px;
 
   > .menu-item {
     margin-right: 15px;

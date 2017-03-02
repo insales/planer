@@ -1,93 +1,95 @@
-<header class="main-header container">
-  <div class="row middle-xl">
-
-    <div class="logotype cell-xl-3 text-center-md cell-md-12">
-
-      {% if settings.logotype_type == 'image' %}
-
-      <a title="{{ account.title }}" href="/" class="logotype-link">
-        <img src="{{ 'logotype.jpg' | asset_url }}" class="logotype-image" alt="{{ account.title }}" title="{{ account.title }}" />
-      </a>
-
-      {% else %}
-
-        <a title="{{ account.title }}" href="/" class="logotype-link">
-          <span class="logotype-text">{{ account.title | editable }}</span>
+<div class="main-toolbar container hide-sm">
+  <ul class="main-menu list">
+    {% for link in linklists.main-menu.links limit:10 %}
+      <li class="menu-item list-item">
+        <a href="{{ link.url }}" class="menu-link" title="{{ link.title }}">
+          {{ link.title }}
         </a>
+      </li>
+    {% endfor %}
+  </ul><!-- /.main-menu -->
+</div><!-- /.main-toolbar -->
 
-      {% endif %}
+<header class="main-header container">
+  <div class="main-header-inner">
+    <div class="row middle-xl">
 
-    </div><!-- /.logotype -->
+      <div class="contacts cell-xl-4 text-left-xl hidden-sm">
 
-    <div class="main-toolbar cell-xl-5 cell-md-8 hidden-sm">
-      <ul class="main-menu list">
-        {% for link in linklists.main-menu.links limit:10 %}
-          <li class="menu-item list-item">
-            <a href="{{ link.url }}" class="menu-link" title="{{ link.title }}">
-              {{ link.title }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul><!-- /.main-menu -->
-    </div><!-- /.main-toolbar -->
-
-    <div class="contacts cell-xl-2 text-right-xl hidden-sm">
-
-      {% case settings.phone %}
+        {% case settings.phone %}
         {% when 'from_settings' %}
-          <div class="phone"><a href="tel:{{ account.phone }}">{{ account.phone | editable }}</a></div>
+        <div class="phone"><a href="tel:{{ account.phone }}">{{ account.phone | editable }}</a></div>
         {% when 'edited_block' %}
-          <div class="phone">{{ blocks.phone.content | editable }}</div>
-      {% endcase %}
+        <div class="phone">{{ blocks.phone.content | editable }}</div>
+        {% endcase %}
 
-      {% case settings.email %}
+        {% case settings.email %}
         {% when 'from_settings' %}
-          <div class="email"><a href="mailto:{{ account.email }}">{{ account.email | editable }}</a></div>
+        <div class="email"><a href="mailto:{{ account.email }}">{{ account.email | editable }}</a></div>
         {% when 'edited_block' %}
-          <div class="email">{{ blocks.email.content | editable }}</div>
-      {% endcase %}
+        <div class="email">{{ blocks.email.content | editable }}</div>
+        {% endcase %}
 
-    </div><!-- /.contacts -->
+      </div><!-- /.contacts -->
 
-    <div class="user-toolbar cell-xl-2 text-right-xl hidden-sm">
+      <div class="logotype cell-xl-4 text-center-xl cell-sm-12">
 
-      <div class="search-widget dropdown">
+        {% if settings.logotype_type == 'image' %}
 
-        <button class="search-trigger button button-circle is-gray dropdown-toggle js-toggle" data-target="parent">
-          <i class="icon search-icon ion-ios-search"></i>
-        </button>
+          <a title="{{ account.title }}" href="/" class="logotype-link">
+            <img src="{{ 'logotype.jpg' | asset_url }}" class="logotype-image" alt="{{ account.title }}" title="{{ account.title }}"/>
+          </a>
 
-        <form action="/search" method="get" class="search-widget-form dropdown-block">
+        {% else %}
 
-          <input type="hidden" name="lang" value="{{ language.locale }}">
+          <a title="{{ account.title }}" href="/" class="logotype-link">
+            <span class="logotype-text">{{ account.title | editable }}</span>
+          </a>
 
-          <input id="search-widget-input" class="input-field search-input" type="text" placeholder="{{ messages.search_title }}" name="q"  value="{% if search.query != empty %}{{ search.query }}{% endif %}"/>
+        {% endif %}
 
-          <button class="button button-circle is-primary search-button" type="submit">
+      </div><!-- /.logotype -->
+
+      <div class="user-toolbar cell-xl-4 text-right-xl hidden-sm">
+
+        <div class="search-widget dropdown">
+
+          <button class="search-trigger button button-circle is-gray dropdown-toggle js-toggle" data-target="parent">
             <i class="icon search-icon ion-ios-search"></i>
           </button>
 
-        </form>
+          <form action="/search" method="get" class="search-widget-form dropdown-block">
 
-      </div><!-- /.search-widget -->
+            <input type="hidden" name="lang" value="{{ language.locale }}">
 
-      {% unless settings.product_compare_hide %}
+            <input id="search-widget-input" class="input-field search-input" type="text" placeholder="{{ messages.search_title }}" name="q" value="{% if search.query != empty %}{{ search.query }}{% endif %}"/>
+
+            <button class="button button-circle is-primary search-button" type="submit">
+              <i class="icon search-icon ion-ios-search"></i>
+            </button>
+
+          </form>
+
+        </div><!-- /.search-widget -->
+
+        {% unless settings.product_compare_hide %}
         <a title="Сравнение" class="compare-button button button-circle is-gray" href="/compares">
           <i class="icon compare-icon ion-stats-bars"></i>
           <span class="compare-counter js-compare-amount"></span>
         </a><!-- /.compare-button -->
-      {% endunless %}
+        {% endunless %}
 
-      <div class="shopcart-widget">
-        <a title="Корзина" href="{{ cart_url }}" class="shopcart-link button button-circle is-primary">
-          <i class="icon shopcart-icon ion-ios-cart-outline"></i>
+        <div class="shopcart-widget">
+          <a title="Корзина" href="{{ cart_url }}" class="shopcart-link button button-circle is-primary">
+            <i class="icon shopcart-icon ion-ios-cart-outline"></i>
           <span class="shopcart-counter js-shopcart-amount {% if cart.items_count > 0 %}active{% endif %}">
             {{ cart.items_count | round: 5 }}
           </span>
-        </a>
-      </div><!-- /.shopcart-widget -->
+          </a>
+        </div><!-- /.shopcart-widget -->
 
-    </div><!-- /.user-toolbar -->
+      </div><!-- /.user-toolbar -->
 
+    </div>
   </div>
 </header>
