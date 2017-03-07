@@ -87,7 +87,8 @@
   }
 
   .wrapper {
-    padding: 0 10px;
+    background: $color-background-primary;
+    padding: 0 20px;
     margin: 0 auto;
   }
 
@@ -776,8 +777,13 @@
   min-height: 0;
 }
 
+.co-button--checkout {
+  margin-left: 10px;
+}
+
 .co-checkout-order_form {
   margin-top: 0;
+  padding-left: 0 !important;
 }
 
 .co-checkout-block--padded {
@@ -788,6 +794,7 @@
 .co-sidebar {
   box-shadow: none;
   border-left: 1px solid #e0e0e0;
+  padding-right: 0;
 }
 
 .co-button {

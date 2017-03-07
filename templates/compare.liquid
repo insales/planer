@@ -6,11 +6,11 @@
 
   {% if products.size > 0 %}
 
-    <div id="js-compare-inner">
+    <div id="compare-inner primary-inner js-compare-inner">
 
       {% for property in properties %}
         {% unless property.differ? %}
-          {% assign same_trigger = true %}
+        {% assign same_trigger = true %}
         {% endunless %}
       {% endfor %}
 
@@ -43,7 +43,8 @@
             <td class="param-value">
               <div class="product-prices">
                 {% if product.variants.size > 1 %}
-                 от <span class="price-min">{{ product.price_min | money }}</span> &mdash; до <span class="price-max">{{ product.price_max | money }}</span>
+                  от <span class="price-min">{{ product.price_min | money }}</span> &mdash; до
+                  <span class="price-max">{{ product.price_max | money }}</span>
                 {% else %}
                   <span class="price">{{ product.price | money }}</span>
                 {% endif %}
@@ -112,7 +113,9 @@
 
   {% else %}
 
-    <div class="notice notice-info text-center">{{ messages.comparison_is_empty }}</div>
+    <div class="primary-inner">
+      <div class="notice notice-info text-center">{{ messages.comparison_is_empty }}</div>
+    </div>
 
   {% endif %}
 

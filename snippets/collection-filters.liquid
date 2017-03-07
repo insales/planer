@@ -24,11 +24,11 @@
       <span class="collapse-icon button-icon icon ion-chevron-down"></span>
     </button>
 
-    <div class="collapse-block on-mobile row">
+    <div class="collapse-block on-mobile">
 
-      <div class="collection-filters cell-sm-12 cell-md-7 cell-xl-9">
+      <div class="collection-filters">
 
-        <div class="filters-block js-edge-calc">
+        <div class="filters-block">
 
           {% for option in collection.options %}
 
@@ -138,8 +138,7 @@
 
           {% endfor %}
 
-          <div
-            class="filter dropdown is-absolute {% unless price_max == coll_max and price_min == coll_min %}active{% endunless %}">
+          <div class="filter dropdown is-absolute {% unless price_max == coll_max and price_min == coll_min %}active{% endunless %}">
 
             <div class="filter-control">
               <button class="button button-grey dropdown-toggle js-toggle" type="button" data-target="parent"
@@ -187,21 +186,6 @@
         </div><!-- /.filters-block -->
 
       </div><!-- /.collection-filters -->
-
-      <div class="collection-order cell-sm-12 cell-md-5 cell-xl-3">
-
-        <div class="select-wrapper">
-          <select class="select-field js-filter-trigger" name="order">
-            <option value="" disabled selected>{{ messages.label_sort }}</option>
-            {{ "price"            | select_option: order, messages.sort_by_price }}
-            {{ "descending_price" | select_option: order, messages.sort_by_price_desc }}
-            {{ "descending_age"   | select_option: order, messages.sort_by_createdon }}
-            {{ "age"              | select_option: order, messages.sort_by_createdon_desc }}
-            {{ "title"            | select_option: order, messages.sort_by_title }}
-          </select>
-        </div>
-
-      </div><!-- /.collection-order -->
 
     </div>
 

@@ -20,7 +20,7 @@
   {% include 'styles' %}
 
   <!-- icons-->
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ 'favicon.png' | asset_url }}" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ 'favicon.png' | asset_url }}"/>
 
   <!-- fixes -->
   <script src="{{ 'modernizr-custom.js' | asset_url }}"></script>
@@ -37,7 +37,7 @@
 
   {% include 'top-toolbar' %}
 
-  <div class="page-inner container">
+  <div class="page-inner">
 
     {% include 'header' %}
 
@@ -45,13 +45,16 @@
 
     {% include 'breadcrumb' %}
 
-    <div class='co-section--checkout_content'>
-      <div class='co-section--checkout_order co-section--checkout_order_sided'>
-        {% yield 'sidebar' %}
-        {% yield %}
+    <div class="container">
+      <div class="primary-inner">
+        <div class='co-section--checkout_content'>
+          <div class='co-section--checkout_order co-section--checkout_order_sided'>
+            {% yield 'sidebar' %}
+            {% yield %}
+          </div>
+        </div>
       </div>
     </div>
-
   </div>
 
   {% include 'footer' %}

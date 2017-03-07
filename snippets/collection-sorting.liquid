@@ -1,0 +1,14 @@
+<div class="collection-order">
+
+  <div class="select-wrapper">
+    <select class="select-field js-filter-trigger" name="order">
+      <option value="" disabled selected>{{ messages.label_sort }}</option>
+      {{ "price"            | select_option: order, messages.sort_by_price }}
+      {{ "descending_price" | select_option: order, messages.sort_by_price_desc }}
+      {{ "descending_age"   | select_option: order, messages.sort_by_createdon }}
+      {{ "age"              | select_option: order, messages.sort_by_createdon_desc }}
+      {{ "title"            | select_option: order, messages.sort_by_title }}
+    </select>
+  </div>
+
+</div><!-- /.collection-order -->

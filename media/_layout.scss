@@ -43,7 +43,7 @@
 .main-header {
   position: relative;
   z-index: 1;
-
+  background: $color-background-primary;
 
   &:after {
     border-bottom: 1px solid $color-border-primary;
@@ -91,7 +91,6 @@
 }
 
 .main-header-inner {
-  background: $color-background-primary;
   padding: 20px;
 }
 
@@ -121,10 +120,15 @@
 
 /*  Main toolbar
 -----------------------------------------*/
+.main-toolbar {
+  background: $color-background-primary;
+  border-bottom: 1px solid $color-border-primary;
+}
+
 .main-menu {
   background: $color-background-primary;
   display: block;
-  border-bottom: 1px solid $color-border-primary;
+  text-align: center;
 
   > .menu-item {
     margin: 10px;
@@ -280,7 +284,6 @@
 .footer {
   background: $color-background-secondary;
   color: $color-text-secondary;
-  margin-top: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
   position: relative;
@@ -665,7 +668,6 @@
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
-  padding-bottom: 20px;
   width: 100%;
 }
 

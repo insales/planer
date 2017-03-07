@@ -3,25 +3,25 @@
 {% include 'page-header' %}
 
 <div class="search-results container">
+  <div class="primary-inner">
+    <form action="/search" method="get" class="search-form">
 
-  <form action="/search" method="get" class="search-form">
+      <input type="hidden" name="lang" value="{{ language.locale }}">
 
-    <input type="hidden" name="lang" value="{{ language.locale }}">
+      <input class="input-field search-input"
+             type="text"
+             placeholder="{{ messages.search_title }}"
+             name="q"
+             value="{% if search.query != empty %}{{ search.query }}{% endif %}"/>
 
-    <input class="input-field search-input"
-           type="text"
-           placeholder="{{ messages.search_title }}"
-           name="q"
-           value="{% if search.query != empty %}{{ search.query }}{% endif %}"/>
+      <button class="button is-primary search-button" type="submit">
+        <i class="icon search-icon ion-ios-search"></i>
+      </button>
 
-    <button class="button is-primary search-button" type="submit">
-      <i class="icon search-icon ion-ios-search"></i>
-    </button>
+    </form>
 
-  </form>
+    {% include 'search-results' %}
 
-  {% include 'search-results' %}
-
-  {% include 'pagination' %}
-
+    {% include 'pagination' %}
+  </div>
 </div>

@@ -82,14 +82,14 @@
   }
 
   .product-caption {
+    display: flex;
+    flex-flow: row nowrap;
     margin-bottom: 10px;
   }
 
   .product-title {
-    font-size: 1.2em;
+    flex: 0 0 60%;
     font-weight: 500;
-    height: 3.6em;
-    margin-bottom: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
 
@@ -109,16 +109,20 @@
   }
 
   .product-prices {
+    flex: 0 0 40%;
+    margin-left: 10px;
     font-size: 1em;
-    margin-bottom: 10px;
+    text-align: right;
 
     .price,
     .old-price {
+      display: block;
       font-size: 1.2em;
+      white-space: nowrap;
     }
 
     .price + .old-price {
-      margin-left: 10px;
+      margin-top: 5px;
     }
 
     .price {
@@ -441,14 +445,16 @@
 }
 
 .on-edge .filter-items {
-  left: auto !important; right: 0;
+  left: auto !important;
+  right: 0;
 }
+
 
 .items-list {
   display: block;
   max-height: 200px;
-  margin: 20px 0;
-  padding: 0 15px;
+  margin: 0;
+  padding: 15px;
   position: relative;
 
   .list-item {
@@ -482,30 +488,24 @@
   }
 }
 
-@include media-max(xs) {
+.collection-filters {
+  padding: 0;
+}
 
-  .filters-block {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+.filter.dropdown.is-absolute {
+  width: 100%;
 
-  .collection-filters {
-    padding: 0;
-  }
-
-  .filter.dropdown.is-absolute {
+  .filter-control .dropdown-toggle {
+    padding: 5px 10px;
+    text-align: left;
     width: 100%;
+  }
 
-    .filter-control .dropdown-toggle {
-      padding: 5px 10px;
-      text-align: left;
-      width: 100%;
-    }
-
-    .dropdown-block {
-      position: static;
-      width: 100%;
-    }
+  .dropdown-block {
+    border: 1px solid $color-border-primary;
+    box-shadow: none;
+    position: static;
+    width: 100%;
   }
 }
 
@@ -779,6 +779,7 @@
 =========================================*/
 .collection-menu-horizontal-wrapper {
   position: relative;
+  background: $color-background-primary;
 
   &:after {
     border-bottom: 1px solid $color-border-primary;
@@ -797,6 +798,7 @@
   display: block;
   background: $color-background-primary;
   padding: 20px 20px 10px;
+  text-align: center;
 
   > .menu-item {
     margin-right: 15px;
@@ -813,10 +815,12 @@
     &.on-edge {
 
       .submenu.level-2.dropdown-block {
-        left: auto; right: 0;
+        left: auto;
+        right: 0;
 
         .menu-item:after {
-          left: auto; right: 100%;
+          left: auto;
+          right: 100%;
         }
 
         .dropdown-icon {
@@ -834,7 +838,8 @@
       }
 
       .submenu.level-3.dropdown-block {
-        left: auto; right: 105%;
+        left: auto;
+        right: 105%;
       }
     }
   }
@@ -850,7 +855,7 @@
   }
 
   .menu-item.is-opened,
-  .menu-item:hover  {
+  .menu-item:hover {
 
     > .dropdown-block {
       display: block;
@@ -915,7 +920,7 @@
     font-size: 1em;
     min-width: 220px;
     top: 28px;
-    z-index: 2000;
+    z-index: 1030;
 
     > .menu-item {
       position: relative;
@@ -1005,7 +1010,7 @@
     display: none;
     left: 105%;
     @include transition((visibility, opacity));
-    z-index: 2000;
+    z-index: 1030;
 
     > .menu-item {
 

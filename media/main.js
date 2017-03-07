@@ -333,6 +333,7 @@ $(document).ready(function () {
         pagination: '.js-promo-slider-pagination',
         autoplay: sliderDelay,
         loop: true,
+        effect: 'fade',
         paginationClickable: true,
         autoHeight: true,
         nextButton: '.js-promo-slider-next',

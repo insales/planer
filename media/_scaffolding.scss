@@ -31,15 +31,31 @@
   outline: none !important;
 }
 
+
+@media screen and (orientation: portrait) {
+  @-ms-viewport {
+    width: 320px;
+    user-zoom: fixed;
+    max-zoom: 1;
+    min-zoom: 1;
+  }
+}
+
 body {
   background: $body-background-color;
   color: $color-text-primary;
   font-family: $font-family-primary;
   font-size: $font-size-primary;
+  font-weight: 300;
 }
 
 select option:disabled {
   color: #ccc;
+}
+
+.primary-inner {
+  background: #fff;
+  padding: 20px;
 }
 
 @if ($body-background-use == true) {
@@ -89,7 +105,7 @@ select option:disabled {
 }
 
 .title-content {
-  margin-bottom: 20px;
+
 }
 
 hr.separator {
@@ -296,7 +312,7 @@ hr.separator {
     line-height: 20px;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 1px;
     @include size(20px);
   }
 }
@@ -759,6 +775,7 @@ hr.separator {
 /*  Scrollbar
 -----------------------------------------*/
 .ps-scrollbar-y-rail {
+  display: block !important;
   background-color: $gray-light !important;
   border-radius: 0 !important;
   opacity: .8 !important;
@@ -810,10 +827,16 @@ hr.separator {
 /*  Page header
 -----------------------------------------*/
 .page-header {
-  margin-bottom: 20px;
-  padding-top: 10px;
+
+  &.is-simple {
+
+    h1,h2,h3,h4 {
+      padding: 20px 20px 0;
+    }
+  }
 
   h1, h2, h3, h4 {
+    background: $color-background-primary;
     font-size: 1.6em;
     margin: 0;
   }
@@ -982,13 +1005,14 @@ hr.separator {
 /*  Breadcrumb
 -----------------------------------------*/
 .breadcrumb-wrapper {
-  margin-bottom: 20px;
+
 }
 
 .breadcrumb {
+  background: $color-background-primary;
   @include list('breadcrumb');
   height: auto;
-  padding-left: 0;
+  padding: 20px;
 
   .breadcrumb-item {
 

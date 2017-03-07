@@ -1,4 +1,5 @@
-<div class="main-toolbar container hide-sm">
+<div class="main-toolbar hide-sm">
+  <div class="main-toolbar-inner container">
   <ul class="main-menu list">
     {% for link in linklists.main-menu.links limit:10 %}
       <li class="menu-item list-item">
@@ -8,10 +9,11 @@
       </li>
     {% endfor %}
   </ul><!-- /.main-menu -->
+  </div>
 </div><!-- /.main-toolbar -->
 
-<header class="main-header container">
-  <div class="main-header-inner">
+<header class="main-header">
+  <div class="main-header-inner container">
     <div class="row middle-xl">
 
       <div class="contacts cell-xl-4 text-left-xl hidden-sm">
