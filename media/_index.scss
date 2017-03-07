@@ -473,7 +473,6 @@
   text-align: center;
 
   .category-inner {
-    padding: 20px;
     border: 1px solid $color-border-primary;
   }
 
@@ -508,6 +507,7 @@
 
   .category-title {
     font-size: 2em;
+    margin-bottom: 10px;
   }
 
   .category-title-inner {
