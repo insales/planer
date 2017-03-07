@@ -5,6 +5,7 @@
   }
 }
 
+
 /*=========================================
   PRODUCT CARD
 =========================================*/
@@ -439,16 +440,15 @@
   background: $color-background-primary;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .3);
   color: $color-text-primary;
-  min-width: 240px;
+  min-width: 210px;
   top: 100%;
   left: 0;
+  overflow: hidden;
 }
 
 .on-edge .filter-items {
-  left: auto !important;
-  right: 0;
+  left: auto !important; right: 0;
 }
-
 
 .items-list {
   display: block;
