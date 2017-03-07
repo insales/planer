@@ -779,24 +779,11 @@
 =========================================*/
 .collection-menu-horizontal-wrapper {
   position: relative;
-  background: $color-background-primary;
-
-  &:after {
-    border-bottom: 1px solid $color-border-primary;
-    content: '';
-    display: block;
-    height: 0;
-    position: absolute;
-    left: $grid-gutter;
-    right: $grid-gutter;
-    bottom: 0;
-    width: auto;
-  }
+  background: $color-background-secondary;
 }
 
 .collection-menu-horizontal {
   display: block;
-  background: $color-background-primary;
   padding: 20px 20px 10px;
   text-align: center;
 
@@ -809,7 +796,7 @@
       font-size: 1em;
       padding: 0;
       text-transform: uppercase;
-      @include link-decor($color-link-primary, $color-link-primary-hover, none, none);
+      @include link-decor($color-link-secondary, $color-link-secondary-hover, none, none);
     }
 
     &.on-edge {
@@ -847,7 +834,7 @@
   > .menu-item.active > .menu-link,
   > .menu-item:hover > .menu-link,
   > .menu-item > .menu-link:hover {
-    color: $color-link-primary;
+    color: $color-link-secondary-hover;
 
     > .link-text {
       text-decoration: underline;

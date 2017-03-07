@@ -160,6 +160,7 @@
 .benefits-inner {
   padding-top: 40px;
   padding-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 /*  Benefit
@@ -205,6 +206,7 @@
 
 .benefit-title {
   display: inline-block;
+  text-transform: uppercase;
 }
 
 .benefit-caption {
@@ -456,7 +458,7 @@
   TITLE COLLECTIONS
 =========================================*/
 .title-collections-inner {
-  background: $color-background-primary;
+  background: $body-background-color;
   padding: 20px;
 }
 
@@ -464,8 +466,8 @@
   SPECIAL CATEGORIES
 =========================================*/
 .title-categories-inner {
-  background: $color-background-primary;
-  padding: 20px;
+  background: $body-background-color;
+  padding: 20px 20px 10px;
 }
 
 .special-category {
@@ -473,6 +475,7 @@
   text-align: center;
 
   .category-inner {
+    background: $color-background-primary;
     border: 1px solid $color-border-primary;
   }
 
@@ -506,7 +509,9 @@
   }
 
   .category-title {
-    font-size: 2em;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 1.4em;
     margin-bottom: 10px;
   }
 
