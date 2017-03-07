@@ -453,8 +453,8 @@
 .items-list {
   display: block;
   max-height: 200px;
-  margin: 0;
-  padding: 15px;
+  margin: 15px 15px 15px 0;
+  padding: 0 15px;
   position: relative;
 
   .list-item {
@@ -481,7 +481,7 @@
   display: block;
 }
 
-@include media-min(xs) {
+@include media-min(sm) {
 
   .collection-toolbar .collapse-block {
     overflow: visible;
