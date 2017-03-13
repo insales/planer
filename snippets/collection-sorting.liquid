@@ -1,4 +1,4 @@
-<div class="collection-order">
+<form class="collection-order" action="{{ collection.url }}" method="get">
 
   <div class="select-wrapper">
     <select class="select-field js-filter-trigger" name="order">
@@ -11,4 +11,48 @@
     </select>
   </div>
 
-</div><!-- /.collection-order -->
+  <input type="hidden" name="price_min"
+         value="{{ price_min }}" {% if price_min == coll_min %} disabled {% endif %}/>
+  <input type="hidden" name="price_max"
+         value="{{ price_max }}" {% if price_max == coll_max %} disabled {% endif %}/>
+
+  {% if page_size %}
+    <input type="hidden" name="page_size" value="{{ page_size }}"/>
+  {% endif %}
+
+  {% if language.not_default? %}
+    <input type="hidden" name="lang" value="{{ language.locale }}"/>
+  {% endif %}
+
+  {% if search.query != '' %}
+    <input type="hidden" name="q" value="{{ search.query }}"/>
+  {% endif %}
+
+  {% for property in collection.properties %}
+    {% for characteristic in property.characteristics %}
+      {% if characteristic.current? %}
+        <input
+          type="hidden"
+          value="{{ characteristic.id }}"
+          name="characteristics[]"
+          id="{{ characteristic.id }}"
+        />
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+
+  {% for option in collection.options %}
+    {% for value in option.values %}
+      {% if value.selected %}
+        <input
+          type="hidden"
+          value="{{ value.id }}"
+          {% if value.selected %}checked{% endif %}
+          name="options[{{ option.id }}][]"
+          id="{{ value.id }}"
+        />
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+
+</form><!-- /.collection-order -->

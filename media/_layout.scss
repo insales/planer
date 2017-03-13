@@ -44,6 +44,7 @@
   position: relative;
   z-index: 1;
   background: $color-background-primary;
+  padding: 20px 0;
 
   &:after {
     border-bottom: 1px solid $color-border-primary;
@@ -88,10 +89,6 @@
       margin: 0;
     }
   }
-}
-
-.main-header-inner {
-  padding: 20px;
 }
 
 /*  Logotype
@@ -672,6 +669,7 @@
 }
 
 .footer {
+  background: $body-background-color;
   color: $color-text-secondary;
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;

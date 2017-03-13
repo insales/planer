@@ -54,8 +54,7 @@ select option:disabled {
 }
 
 .primary-inner {
-  background: #fff;
-  padding: 20px;
+  background: $color-background-primary;
 }
 
 @if ($body-background-use == true) {
@@ -835,7 +834,7 @@ hr.separator {
   &.is-simple {
 
     h1,h2,h3,h4 {
-      padding: 20px 20px 0;
+      padding: 20px 0;
     }
   }
 
@@ -1016,7 +1015,7 @@ hr.separator {
   background: $color-background-primary;
   @include list('breadcrumb');
   height: auto;
-  padding: 20px;
+  padding: 20px 0;
 
   .breadcrumb-item {
 
@@ -1157,7 +1156,7 @@ hr.separator {
 .collapse-block {
   max-height: 0;
   opacity: 0;
-  overflow: hidden;
+  overflow: hidden !important;
   @include transition((opacity, max-height));
 }
 

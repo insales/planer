@@ -1,12 +1,14 @@
 {% include 'breadcrumb' %}
 
-<div class="collection container">
-  <div class="primary-inner">
+<div class="collection primary-inner">
+  <div class="container">
     <div class="row">
 
       {% paginate products by 12 %}
 
       <div class="collection-aside cell-sm-12 cell-xl-3">
+
+        {% include 'collection-menu-vertical' %}
 
         {% include 'collection-filters' %}
 

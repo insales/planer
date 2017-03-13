@@ -25,6 +25,11 @@
 
     </div><!-- /.collection-limit -->
 
+    <input type="hidden" name="price_min"
+           value="{{ price_min }}" {% if price_min == coll_min %} disabled {% endif %}/>
+    <input type="hidden" name="price_max"
+           value="{{ price_max }}" {% if price_max == coll_max %} disabled {% endif %}/>
+
     {% if order %}
       <input type="hidden" name="order" value="{{ order }}"/>
     {% endif %}
@@ -41,7 +46,6 @@
       {% for characteristic in property.characteristics %}
         {% if characteristic.current? %}
           <input
-            class="filter-field checkbox-field"
             type="hidden"
             value="{{ characteristic.id }}"
             name="characteristics[]"
@@ -55,7 +59,6 @@
       {% for value in option.values %}
         {% if value.selected %}
           <input
-            class="filter-field checkbox-field"
             type="hidden"
             value="{{ value.id }}"
             {% if value.selected %}checked{% endif %}
@@ -65,11 +68,6 @@
         {% endif %}
       {% endfor %}
     {% endfor %}
-
-    <input type="hidden" name="price_min"
-           value="{{ price_min }}" {% if price_min == coll_min %} disabled {% endif %}/>
-    <input type="hidden" name="price_max"
-           value="{{ price_max }}" {% if price_max == coll_max %} disabled {% endif %}/>
 
   </form><!-- /.collection-toolbar-top -->
 

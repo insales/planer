@@ -27,14 +27,16 @@
 
 {% endcase %}
 
-<div class="page-header container is-simple">
-  <h1>
-    {% if page_title != '' %}
-      {{ page_title }}
-    {% else %}
-      {{ title | editable }}
-    {% endif %}
-  </h1>
+<div class="page-header primary-inner is-simple">
+  <div class="container">
+    <h1>
+      {% if page_title != '' %}
+        {{ page_title }}
+      {% else %}
+        {{ title | editable }}
+      {% endif %}
+    </h1>
+  </div>
 </div><!-- /.page-header -->
 
 {% assign page_title = '' %}

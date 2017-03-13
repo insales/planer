@@ -40,10 +40,10 @@
               {% endif %}
             {% endfor %}
 
-            <div class="filter js-filter-checkbox collapse is-absolute">
+            <div class="filter js-filter-checkbox collapse {% if filter_active %}is-opened{% endif %}">
 
               <div class="filter-control">
-                <button class="button button-grey collapse-toggle {% if filter_active %} active {% endif %}" type="button" data-target="parent" data-group="filters">
+                <button class="button button-grey collapse-toggle {% if filter_active %} active {% endif %}" type="button">
                   <span class="filter-name">{{ option.title }}</span>
                   <span class="collapse-icon icon ion-chevron-down"></span>
                   <sup class="filter-count js-filter-count"></sup>
@@ -53,7 +53,7 @@
                 </button>
               </div><!-- /.filter-control -->
 
-              <div class="filter-items dropdown-block">
+              <div class="filter-items collapse-block">
 
                 <ul class="list-vertical js-scrollable items-list">
 
@@ -73,9 +73,6 @@
                   <button class="button button-primary" type="submit">
                     <span class="button-text">{{ messages.button_apply }}</span>
                   </button>
-                  <button class="button button-default dropdown-toggle js-toggle" type="button" data-target="parent">
-                    <span class="button-text">{{ messages.button_close }}</span>
-                  </button>
                 </div><!-- /.dropdown-block-control -->
 
               </div><!-- /.filter-items -->
@@ -94,16 +91,16 @@
               {% endif %}
             {% endfor %}
 
-            <div class="filter js-filter-checkbox collapse">
+            <div class="filter js-filter-checkbox collapse {% if filter_active %}is-opened{% endif %}">
 
               <div class="filter-control">
-                <button class="button button-grey collapse-toggle {% if filter_active %}active{% endif %}" type="button" data-target="parent" data-group="filters">
+                <button class="button button-grey collapse-toggle {% if filter_active %}active{% endif %}" type="button">
                   <span class="filter-name">{{ property.title }}</span>
-                  <span class="dropdown-icon icon ion-chevron-down"></span>
+                  <span class="collapse-icon icon ion-chevron-down"></span>
                   <sup class="filter-count js-filter-count"></sup>
                 </button>
-                <button class="button filter-clear js-filter-clear" type="button"><i
-                    class="icon clear-icon ion-ios-close-outline"></i>
+                <button class="button filter-clear js-filter-clear" type="button">
+                  <i class="icon clear-icon ion-ios-close-outline"></i>
                 </button>
               </div><!-- /.filter-control -->
 
@@ -127,9 +124,6 @@
                   <button class="button button-primary" type="submit">
                     <span class="button-text">{{ messages.button_apply }}</span>
                   </button>
-                  <button class="button button-default dropdown-toggle js-toggle" type="button" data-target="parent">
-                    <span class="button-text">{{ messages.button_close }}</span>
-                  </button>
                 </div><!-- /.dropdown-block-control -->
 
               </div><!-- /.filter-items -->
@@ -138,10 +132,10 @@
 
           {% endfor %}
 
-          <div class="filter collapse {% unless price_max == coll_max and price_min == coll_min %}active{% endunless %}">
+          <div class="filter collapse {% unless price_max == coll_max and price_min == coll_min %}is-opened{% endunless %}">
 
             <div class="filter-control">
-              <button class="button button-grey collapse-toggle" type="button" data-target="parent" data-group="filters">
+              <button class="button button-grey collapse-toggle {% unless price_max == coll_max and price_min == coll_min %}is-active{% endunless %}" type="button">
                 <span class="filter-name">{{ messages.label_price }}</span>
                 <span class="collapse-icon icon ion-chevron-down"></span>
                 <sup class="filter-count js-filter-count"></sup>
@@ -151,7 +145,7 @@
               </button>
             </div><!-- /.filter-control -->
 
-            <div class="filter-items dropdown-block">
+            <div class="filter-items collapse-block">
 
               <div class="filter-body range-slider js-range-slider-wrapper">
                 <div class="js-range-slider"
@@ -174,9 +168,6 @@
                 <button class="button button-primary" type="submit">
                   <span class="button-text">{{ messages.button_apply }}</span>
                 </button>
-                <button class="button button-default dropdown-toggle js-toggle" type="button" data-target="parent">
-                  <span class="button-text">{{ messages.button_close }}</span>
-                </button>
               </div><!-- /.dropdown-block-control -->
 
             </div><!-- /.filter-items -->
@@ -188,6 +179,10 @@
       </div><!-- /.collection-filters -->
 
     </div>
+
+    {% if order %}
+      <input type="hidden" name="order" value="{{ order }}"/>
+    {% endif %}
 
     {% if page_size %}
       <input type="hidden" name="page_size" value="{{ page_size }}"/>

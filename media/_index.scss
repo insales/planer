@@ -151,7 +151,7 @@
   BENEFITS
 =========================================*/
 .benefits {
-  background: $color-background-primary;
+  background: $body-background-color;
   position: relative;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -160,17 +160,16 @@
 .benefits-inner {
   padding-top: 40px;
   padding-bottom: 40px;
-  margin-bottom: 20px;
 }
 
 /*  Benefit
 -----------------------------------------*/
 .benefit {
-
+  color: $color-text-secondary;
 }
 
 .benefit-inner {
-  color: $color-text-primary;
+  color: $color-text-secondary;
   text-decoration: none;
   display: flex;
   flex-flow: column nowrap;
@@ -178,8 +177,8 @@
 }
 
 .benefit-image {
-  background: $color-background-secondary;
-  border: 10px solid $color-border-secondary;
+  background: transparent;
+  border: 1px solid $color-border-secondary;
   font-size: 0;
   border-radius: 50%;
   width: 100px;
@@ -228,7 +227,8 @@
   NEWS FEED
 =========================================*/
 .news-feed-wrapper {
-  background: rgba(0,0,0,.1);
+  background: $body-background-color;
+  color: $color-text-secondary;
 }
 
 .news-feed-inner {
@@ -424,6 +424,13 @@
 }
 
 /*=========================================
+  TITLE CONTENT
+=========================================*/
+.title-content {
+  background: $color-background-primary;
+}
+
+/*=========================================
   COLLECTIONS TABS
 =========================================*/
 .collections-tabs.tabs-menu {
@@ -457,16 +464,22 @@
 /*=========================================
   TITLE COLLECTIONS
 =========================================*/
+.title-collections {
+  background: $color-background-primary;
+}
+
 .title-collections-inner {
-  background: $body-background-color;
   padding: 20px;
 }
 
 /*=========================================
   SPECIAL CATEGORIES
 =========================================*/
+.special-categories {
+  background: $color-background-primary;
+}
+
 .title-categories-inner {
-  background: $body-background-color;
   padding: 20px 20px 10px;
 }
 

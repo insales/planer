@@ -425,6 +425,8 @@ $(document).ready(function () {
         $target = $($self.parents('.collapse:first'));
       }
 
+      console.log($target);
+
       if ($targetToggle) {
         $targetToggle.toggleClass('is-active')
       }
