@@ -16,7 +16,7 @@
     "comparison_title" : "Сравнение",
 
     "created_by": "Сделано в InSales",
-    "insales_domain": "http://insales.ru",
+    "insales_domain": "https://insales.ru",
 
     "breadcrumb_home": "Главная",
 
@@ -279,7 +279,7 @@
     "comparison_title" : "Comparison",
 
     "created_by": "Created by InSales",
-    "insales_domain": "http://insales.com",
+    "insales_domain": "https://insales.com",
 
     "breadcrumb_home": "Home",
 
