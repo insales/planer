@@ -1,19 +1,20 @@
 /**
- * Header resize
- * Фикс фиксированной шапки и якорей
+ * Menus active check
+ * Хак, для улучшения работы меню - выделения активного элемента.
+ * Именно так - потому что теперь - меню кэшируется, и в нём нельзя использовать collection.current?
  */
-$(function(){
+(function () {
 
-  var height = $('.main-header').outerHeight();
+  var currentHandle = $("meta[name='handle']").attr("content");
 
-  $('.page-inner, #review_form, #comment_form, #comments-block').css({'paddingTop': height});
+  $('[data-handle="' + currentHandle + '"]').each(function(e){
 
-  $('#review_form, #comment_form, #comments-block').css({
-    'marginTop': -height
+    $(this).addClass('active');
+    $(this).parents('.list-item').addClass('active');
+
   });
 
 }());
-
 
 /**
  * Alertify init
