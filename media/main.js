@@ -1,4 +1,21 @@
 /**
+ * Header resize
+ * Фикс фиксированной шапки и якорей
+ */
+$(function(){
+
+  var height = $('.main-header').outerHeight();
+
+  $('.page-inner, #review_form, #comment_form, #comments-block').css({'paddingTop': height});
+
+  $('#review_form, #comment_form, #comments-block').css({
+    'marginTop': -height
+  });
+
+}());
+
+
+/**
  * Alertify init
  */
 (function () {

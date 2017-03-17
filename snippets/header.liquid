@@ -1,14 +1,14 @@
 <div class="main-toolbar hide-sm">
   <div class="main-toolbar-inner container">
-  <ul class="main-menu list">
-    {% for link in linklists.main-menu.links limit:10 %}
-      <li class="menu-item list-item">
-        <a href="{{ link.url }}" class="menu-link" title="{{ link.title }}">
-          {{ link.title }}
-        </a>
-      </li>
-    {% endfor %}
-  </ul><!-- /.main-menu -->
+    <ul class="main-menu list">
+      {% for link in linklists.main-menu.links limit:10 %}
+        <li class="menu-item list-item">
+          <a href="{{ link.url }}" class="menu-link" title="{{ link.title }}">
+            {{ link.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul><!-- /.main-menu -->
   </div>
 </div><!-- /.main-toolbar -->
 
@@ -84,9 +84,7 @@
         <div class="shopcart-widget">
           <a title="Корзина" href="{{ cart_url }}" class="shopcart-link button button-circle is-primary">
             <i class="icon shopcart-icon ion-ios-cart-outline"></i>
-          <span class="shopcart-counter js-shopcart-amount {% if cart.items_count > 0 %}active{% endif %}">
-            {{ cart.items_count | round: 5 }}
-          </span>
+            <span class="shopcart-counter js-shopcart-amount"></span>
           </a>
         </div><!-- /.shopcart-widget -->
 
