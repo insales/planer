@@ -210,21 +210,21 @@
         "block_template": "system-promo-slide"
       },
       {
-        "name": "Benefits Type",
+        "name": "{{ messages.block_list_benefits }}",
         "handle": "benefits-type",
         "type": "block_list_widget_type",
         "snippet": "benefits.liquid",
         "block_template": "system-benefit"
       },
       {
-        "name": "Special Categories Type",
+        "name": "{{ messages.s_subheading_special_categories }}",
         "handle": "special-categories-type",
         "type": "block_list_widget_type",
         "snippet": "title-categories.liquid",
         "block_template": "system-collection"
       },
       {
-        "name": "Special Products Type",
+        "name": "{{ messages.s_subheading_special_products }}",
         "handle": "special-products-type",
         "type": "block_list_widget_type",
         "snippet": "title-collections.liquid",
