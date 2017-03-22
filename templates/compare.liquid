@@ -3,7 +3,6 @@
 {% include 'page-header' %}
 
 <div id="js-compare-wrapper" class="compares primary-inner">
-
   <div class="container">
 
     {% if products.size > 0 %}
@@ -42,7 +41,7 @@
           <tr>
             <td class="param-title">{{ messages.label_price }}</td>
             {% for product in products %}
-              <td class="param-value">
+              <td class="param-value" data-compared-id="{{ product.id }}">
                 <div class="product-prices">
                   {% if product.variants.size > 1 %}
                     от <span class="price-min">{{ product.price_min | money }}</span> &mdash; до

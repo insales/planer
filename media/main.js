@@ -901,6 +901,7 @@ $(document).ready(function () {
       }
 
       if (Site.template == 'compare') {
+
         if (data.products.length == 0) {
           $('.table-compare')
             .fadeOut('slow')
@@ -908,15 +909,21 @@ $(document).ready(function () {
             .fadeIn('slow');
           $(compareViewToggler).hide();
         } else {
-          $(compareWrapper).load(compareWrapper + ' ' + compareInner, function () {
-            if (!$.cookie('compare-view')) {
+
+          console.log(compareUrl + ' ' + compareInner);
+
+          //$(compareWrapper).load(compareUrl + ' ' + compareInner, function () {
+
+            /*if (!$.cookie('compare-view')) {
               $(sameRows).hide();
               $(compareViewToggler).addClass('active');
-            }
-          });
-        }
-      }
+            }*/
 
+          //});
+
+        }
+
+      }
     });
 
   }());

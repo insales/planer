@@ -203,7 +203,7 @@
 
     "widget_types": [
       {
-        "name": "Promo Slider Type",
+        "name": "{{ messages.block_list_slider }}",
         "handle": "promo-slider-type",
         "type": "block_list_widget_type",
         "snippet": "promo-slider.liquid",
