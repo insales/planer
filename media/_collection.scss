@@ -797,10 +797,12 @@
   display: block;
   padding: 20px 20px 10px;
   text-align: center;
+  font-size: 0;
 
   > .menu-item {
     margin-right: 15px;
     padding-bottom: 10px;
+    font-size: $font-size-primary;
 
     > .menu-link {
       display: inline-block;
