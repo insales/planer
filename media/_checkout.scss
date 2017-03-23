@@ -181,8 +181,8 @@
   }
 
   .userbar, .set-title {
-    background: lighten($gray-lighter, 5%);
-    border-bottom: 1px solid $gray-lighter;
+    background: $color-background-primary;
+    border-bottom: 1px solid $color-border-primary;
     padding: 8px 11px 7px;
     font-weight: bold;
     vertical-align: middle;
@@ -191,7 +191,7 @@
   .userbar {
     font-weight: normal;
     margin-bottom: 30px;
-    border: 1px solid $gray-lighter;
+    border: 1px solid $color-border-primary;
 
     .links {
       word-spacing: 4px;
@@ -592,15 +592,7 @@
   }
 
   .table .highlited_row {
-    background: rgba(255, 255, 255, .1);
-  }
-
-  .green_status {
-    background: #E0FCE0 !important;
-  }
-
-  .grey_status {
-    background: #E8E8E8 !important;
+    background: rgba(255, 255, 255, .1) !important;
   }
 
   #logo_bg {

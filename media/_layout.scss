@@ -228,7 +228,6 @@
   .search-input {
     background: #fff;
     border: 1px solid $color-border-primary;
-    border-radius: 25px;
     height: 50px;
     padding: 12px 60px 12px 12px;
   }
@@ -658,6 +657,7 @@
 }
 
 .page-inner {
+  background: $color-background-primary;
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
