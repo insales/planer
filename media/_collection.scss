@@ -915,8 +915,8 @@
   }
 
   .submenu.level-2.dropdown-block {
-    background: $color-background-primary;
-    border: 1px solid $color-border-primary;
+    background: $color-background-secondary;
+    border: 1px solid $color-border-secondary;
     font-size: 1em;
     min-width: 220px;
     top: 28px;
@@ -982,7 +982,7 @@
       }
 
       > .menu-link {
-        color: $color-link-primary;
+        color: $color-link-secondary;
         display: inline-block;
         padding: 10px;
         text-decoration: none;
@@ -993,7 +993,7 @@
     > .menu-item.active > .menu-link,
     > .menu-item:hover > .menu-link,
     > .menu-item > .menu-link:hover {
-      color: $color-link-primary-hover;
+      color: $color-link-secondary;
 
       .link-text {
         text-decoration: underline;
@@ -1002,8 +1002,8 @@
   }
 
   .submenu.level-3.dropdown-block {
-    background: $color-background-primary;
-    border: 1px solid $color-border-primary;
+    background: $color-background-secondary;
+    border: 1px solid $color-border-secondary;
     font-size: 1em;
     min-width: 220px;
     top: 0;
@@ -1015,7 +1015,7 @@
     > .menu-item {
 
       > .menu-link {
-        color: $color-link-primary;
+        color: $color-link-secondary;
         display: inline-block;
         padding: 10px;
         text-decoration: none;
@@ -1026,7 +1026,7 @@
     > .menu-item.active > .menu-link,
     > .menu-item:hover > .menu-link,
     > .menu-item > .menu-link:hover {
-      color: $color-link-primary-hover;
+      color: $color-link-secondary-hover;
 
       .link-text {
         text-decoration: underline;
@@ -1242,8 +1242,8 @@
     .dropdown-button {
       cursor: pointer;
       display: inline-block;
-      background: $gray-lighter;
-      color: $color-text-primary;
+      background: $color-background-primary;
+      color: $color-link-primary;
       border-radius: 50%;
       width: 22px;
       height: 22px;
