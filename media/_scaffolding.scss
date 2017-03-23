@@ -845,6 +845,16 @@ hr.separator {
   }
 }
 
+@include media-max(sm) {
+
+  .page-header {
+
+    .header-text {
+      margin-bottom: $grid-gutter;
+    }
+  }
+}
+
 /*  Pagination
 -----------------------------------------*/
 .pagination {
