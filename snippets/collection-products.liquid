@@ -1,3 +1,6 @@
+
+{% include "collection-filter-check", display_filter: false %}
+
 <div class="products-list row">
 
   {% if collection.products.size > 0 %}
@@ -10,7 +13,7 @@
 
     {% endfor %}
 
-  {% else %}
+  {% elsif display_filter %}
 
     {% if collection.current_characteristics.size > 0 or price_min > 0 %}
 
