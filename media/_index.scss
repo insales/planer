@@ -161,6 +161,7 @@
 .benefits-inner {
   padding-top: 40px;
   padding-bottom: 40px;
+  text-align: center;
 }
 
 /*  Benefit
@@ -205,8 +206,10 @@
 }
 
 .benefit-title {
-  display: inline-block;
+  display: block;
   text-transform: uppercase;
+  line-height: 1.8em;
+  max-width: 100%;
 }
 
 .benefit-caption {
