@@ -835,6 +835,7 @@
 }
 
 .co-input-field {
+  background-color: #fff;
   border: 1px solid $gray-lighter;
   color: $gray;
   border-radius: 0;
@@ -865,6 +866,103 @@
 
 .co-modal {
   background: $color-background-primary;
+}
+
+
+/*  Typehead dropdown
+==========================================*/
+.tt-dropdown-menu {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  left: 0;
+  right: 0 !important;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  z-index: 1050;
+  -moz-box-shadow: 0px 4px 14px -4px #cccccc;
+  -webkit-box-shadow: 0px 4px 14px -4px #cccccc;
+  box-shadow: 0px 4px 14px -4px #cccccc;
+  border-radius: 0;
+}
+.tt-dropdown-menu small,
+.tt-dropdown-menu .empty-message {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+}
+
+.twitter-typeahead {
+  width: 100%;
+}
+
+.twitter-typeahead .tt-query, .twitter-typeahead .tt-hint {
+  margin-bottom: 0;
+}
+
+.tt-suggestion, .tt-footer {
+  display: block;
+  position: relative;
+  padding: 1rem 1rem;
+  cursor: pointer;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.tt-suggestion:not(:last-child):after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  top: 100%;
+  border-bottom: 1px dotted #ccc;
+  z-index: 1;
+}
+
+.tt-suggestion:last-child {
+  margin-bottom: 0;
+}
+
+.tt-suggestion.tt-is-under-cursor, .tt-footer.tt-is-under-cursor {
+  color: #333;
+  background-color: #fff;
+}
+
+.tt-suggestion.tt-is-under-cursor a, .tt-footer.tt-is-under-cursor a {
+  color: #333;
+}
+
+.tt-suggestion.tt-cursor, .tt-footer.tt-cursor {
+  color: #333;
+  background-color: #fff;
+}
+
+.co-input--nested .co-input-label {
+  z-index: 3;
+  color: #333;
+}
+
+.co-input-select select,
+.co-input-field {
+  color: #333;
+  background-color: #fff;
+  max-width: 100%;
+}
+
+.co-input-select select {
+  cursor: pointer;
+}
+
+.co-input-select::after {
+  color: #333;
+  z-index: 3;
 }
 
 /*=========================================
