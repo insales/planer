@@ -271,12 +271,14 @@
 
 .discount-form {
   margin-right: 20px;
+  position: relative;
+  padding-right: 40px;
 }
 
 /*  Discount input
 -----------------------------------------*/
 .discount-input {
-  width: 130px;
+  width: 100%;
   height: 40px;
   border: 1px solid #999;
   padding-left: 10px;
@@ -286,10 +288,11 @@
 .discount-button {
   background: $gray-lighter;
   border: 1px solid #999;
+  border-left: 0;
   color: #000;
   width: 40px;
   height: 40px;
-  margin-left: -4px;
+  position: absolute; top: 0; bottom: 0; right: 0;
 }
 
 @include media-max(xs) {
