@@ -57,6 +57,10 @@ select option:disabled {
   background: $color-background-primary;
 }
 
+.page-content {
+  margin-bottom: 30px;
+}
+
 @if ($body-background-use == true) {
 
   .page-wrapper:after {
