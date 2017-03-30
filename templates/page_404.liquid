@@ -1,15 +1,19 @@
-<div class="page-header is-simple container">
-  <h1>404</h1>
+<div class="page-header primary-inner is-simple">
+  <div class="container">
+    <h1>404</h1>
+  </div>
 </div>
 
 {% include 'breadcrumb' %}
 
 {% if page.content != '' %}
-  <div class="page-content container">
+  <div class="page-content primary-inner">
+    <div class="container">
 
-    <div class="editor primary-inner">
-      {{ messages.page_404 }}
+      <div class="editor">
+        {{ messages.page_404 }}
+      </div>
+
     </div>
-
   </div>
 {% endif %}
