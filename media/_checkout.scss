@@ -340,19 +340,19 @@
       border: 1px solid $gray-lighter;
       padding: 7px 10px;
       margin-bottom: 5px;
-      width: 100%;
+      width: 100% !important;
     }
     .textfield {
       border: 1px solid $gray-lighter;
       padding: 7px 10px;
       margin-bottom: 5px;
-      width: 100%;
+      width: 100% !important;
     }
     input {
       border: 1px solid $gray-lighter;
       padding: 7px 10px;
       margin-bottom: 5px;
-      max-width: 100%;
+      max-width: 100% !important;
     }
   }
 
