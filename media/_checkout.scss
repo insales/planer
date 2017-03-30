@@ -516,6 +516,11 @@
     h3 {
       margin-top: 0;
     }
+
+    + div {
+      float: left;
+      margin-left: 1rem;
+    }
   }
 
   .register .field-content {
