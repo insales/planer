@@ -191,7 +191,7 @@
     "s_color_border_secondary": "Цвет границ",
 
     "s_subheading_background_substrate": "Фоновая подложка",
-    "s_body_background_color": "Цвет фона",
+    "s_body_background_color": "Цвет фона 2",
     "s_body_background_use": "Использовать изображение",
     "s_body_background_type": "Положение фона",
     "s_body_background_image": "Изображение",
@@ -454,7 +454,7 @@
     "s_color_border_secondary": "Border color",
 
     "s_subheading_background_substrate": "Background substrate",
-    "s_body_background_color": "Background color",
+    "s_body_background_color": "Background color 2",
     "s_body_background_use": "Use background image",
     "s_body_background_type": "Position background",
     "s_body_background_image": "Image",
