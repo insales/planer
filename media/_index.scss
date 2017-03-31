@@ -154,8 +154,11 @@
 .benefits {
   background: $body-background-color;
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 30px;
+}
+
+.benefit {
+  margin-bottom: 30px;
 }
 
 .benefits-inner {
