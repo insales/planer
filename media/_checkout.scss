@@ -1014,3 +1014,13 @@
   border-radius: 0;
   color: $color-text-primary;
 }
+
+.m-modal-close {
+  background: none;
+
+  &::after {
+    content: '×';
+    color: #fff;
+    font-size: 30px;
+  }
+}
