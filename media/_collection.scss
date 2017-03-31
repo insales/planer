@@ -11,6 +11,7 @@
 =========================================*/
 .product-card {
   margin-bottom: 20px;
+  display: flex;
 
   .card-inner {
     background: #fff;
@@ -19,6 +20,7 @@
     padding: 20px;
     position: relative;
     overflow: hidden;
+    flex: 1 1 100%;
     z-index: z(card);
   }
 
@@ -91,7 +93,6 @@
   .product-title {
     flex: 0 0 60%;
     font-weight: 500;
-    height: 5em;
     overflow: hidden;
     text-overflow: ellipsis;
 
@@ -119,7 +120,7 @@
     .price,
     .old-price {
       display: block;
-      font-size: 1.2em;
+      font-size: 1em;
       white-space: nowrap;
     }
 
