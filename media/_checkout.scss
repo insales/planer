@@ -4,6 +4,14 @@
 .checkout-v1-wrapper {
   color: $color-text-primary;
 
+  #order_client_bonus_points {
+    text-align: center;
+    height: 37px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
   #orders_history {
 
     td {
@@ -866,6 +874,18 @@
 
 .co-modal {
   background: $color-background-primary;
+}
+
+.co-bonus_points-field {
+  height: 36px;
+  margin: 0 20px 0 0;
+}
+
+input[type="button"],
+.co-bonus_points-submit {
+  height: 37px;
+  margin: 0 20px 0 0;
+  padding: 0 10px;
 }
 
 
