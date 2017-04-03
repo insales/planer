@@ -608,6 +608,14 @@
     background: rgba(255, 255, 255, .1) !important;
   }
 
+  .table {
+
+    td {
+      border-bottom: 1px solid $color-border-primary;
+      padding: 10px 0;
+    }
+  }
+
   #logo_bg {
     height: 60px;
     margin: 5px 10px 5px 0;
