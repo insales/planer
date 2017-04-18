@@ -910,13 +910,17 @@ input[type="button"],
   overflow-y: auto;
   left: 0;
   right: 0 !important;
-  background-color: #fff;
+  //background-color: #fff;
   border: 1px solid #ccc;
   z-index: 1050;
   -moz-box-shadow: 0px 4px 14px -4px #cccccc;
   -webkit-box-shadow: 0px 4px 14px -4px #cccccc;
   box-shadow: 0px 4px 14px -4px #cccccc;
   border-radius: 0;
+
+  color: $color-text-primary;
+  background-color: $color-background-primary;
+  border-color: $color-border-primary;
 }
 .tt-dropdown-menu small,
 .tt-dropdown-menu .empty-message {
@@ -959,17 +963,12 @@ input[type="button"],
 }
 
 .tt-suggestion.tt-is-under-cursor, .tt-footer.tt-is-under-cursor {
-  color: #333;
-  background-color: #fff;
 }
 
 .tt-suggestion.tt-is-under-cursor a, .tt-footer.tt-is-under-cursor a {
-  color: #333;
-}
 
+}
 .tt-suggestion.tt-cursor, .tt-footer.tt-cursor {
-  color: #333;
-  background-color: #fff;
 }
 
 .co-input--nested .co-input-label {
