@@ -789,12 +789,19 @@
 }
 
 .co-button--checkout {
-  margin-left: 10px;
+  @media (max-width: 480px) {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
 }
 
 .co-checkout-order_form {
-  margin-top: 0;
+  margin-top: 0 !important;
   padding-left: 0 !important;
+
+  @media (max-width: 768px) {
+    padding-right: 0 !important;
+  }
 }
 
 .co-checkout-block--padded {
