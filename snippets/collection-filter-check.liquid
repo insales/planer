@@ -1,4 +1,5 @@
 {% assign filters_active = false %}
+{% assign display_filter = false %}
 
 {% if collection.current_option_values.size > 0 %}
   {% assign filters_active = true %}
@@ -17,7 +18,7 @@
 {% if filters_active %}
   {% assign display_filter = true %}
   {% assign filter_selected = true %}
-  {% elsif collection.products.size > 0 %}
+{% elsif collection.products.size > 0 %}
   {% assign display_filter = true %}
 {% else %}
   {% assign display_filter = false %}

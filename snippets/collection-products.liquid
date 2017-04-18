@@ -15,24 +15,20 @@
 
   {% elsif display_filter %}
 
-    {% if collection.current_characteristics.size > 0 or price_min > 0 %}
+    <div class="notices cell-xl-12">
+      <div class="notice notice-warning">
+        <p>{{ messages.collection_filters_is_empty }}</p>
+        <p><a href="{{ collection.url }}" class="action-link is-dark">{{ messages.button_reset_filters }}</a></p>
+      </div>
+    </div><!-- /.notices -->
 
-      <div class="notices cell-xl-12">
-        <div class="notice notice-warning">
-          <p>{{ messages.collection_filters_is_empty }}</p>
-          <p><a href="{{ collection.url }}" class="action-link is-dark">{{ messages.button_reset_filters }}</a></p>
-        </div>
-      </div><!-- /.notices -->
+  {% else %}
 
-    {% else %}
-
-      <div class="notices cell-xl-12">
-        <div class="notice notice-info">
-          {{ messages.collection_is_empty }}
-        </div>
-      </div><!-- /.notices -->
-
-    {% endif %}
+    <div class="notices cell-xl-12">
+      <div class="notice notice-info">
+        {{ messages.collection_is_empty }}
+      </div>
+    </div><!-- /.notices -->
 
   {% endif %}
 
