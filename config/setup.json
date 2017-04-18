@@ -79,21 +79,21 @@
       "description": "{{ messages.block_slide1 }}",
       "block_template": "system-promo-slide",
       "image": "slide1.jpg",
-      "link": "/admin2/block_lists_and_blocks"
+      "link": ""
     },
     "slide2": {
       "title": "{{ messages.block_slide2 }}",
       "description": "{{ messages.block_slide2 }}",
       "block_template": "system-promo-slide",
       "image": "slide2.jpg",
-      "link": "/admin2/block_lists_and_blocks"
+      "link": ""
     },
     "slide3": {
       "title": "{{ messages.block_slide3 }}",
       "description": "{{ messages.block_slide3 }}",
       "block_template": "system-promo-slide",
       "image": "slide3.jpg",
-      "link": "/admin2/block_lists_and_blocks"
+      "link": ""
     },
     "benefit1": {
       "title": "{{ messages.block_benefit1 }}",
@@ -174,26 +174,18 @@
         "handle": "index-list",
         "widgets": [
           {
-            "name": "{{ messages.s_subheading_slider }}",
-            "handle": "promo-slider",
             "widget_type": "promo-slider-type",
             "data_handle": "slider"
           },
           {
-            "name": "{{ messages.s_subheading_benefits }}",
-            "handle": "benefits",
             "widget_type": "benefits-type",
             "data_handle": "benefits"
           },
           {
-            "name": "{{ messages.s_subheading_special_products }}",
-            "handle": "title-collections",
             "widget_type": "special-products-type",
             "data_handle": "special-products"
           },
           {
-            "name": "{{ messages.s_subheading_special_categories }}",
-            "handle": "title-categories",
             "widget_type": "special-categories-type",
             "data_handle": "special-categories"
           }
