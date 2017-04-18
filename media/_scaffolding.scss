@@ -47,6 +47,7 @@ body {
   font-family: $font-family-primary;
   font-size: $font-size-primary;
   font-weight: 300;
+  min-width: 320px;
 }
 
 select option:disabled {
@@ -201,14 +202,18 @@ hr.separator {
 
 .button-action {
   padding: 15px 0;
+  color: $color-link-primary;
 
   .button-text {
-    color: $gray;
     border-bottom: 1px dashed;
   }
 
   &.is-bigger {
     font-size: 1.2em;
+  }
+
+  &:hover {
+    color: $color-link-primary-hover;
   }
 }
 
