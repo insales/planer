@@ -7,7 +7,11 @@
         {% for slide in data.blocks %}
 
           <div class="promo-slide swiper-slide">
-            <a class="slide-inner" href="{{ slide.link }}" title="{{ slide.description }}">
+            {% if slide.link != '' %}
+              <a class="slide-inner" href="{{ slide.link }}" title="{{ slide.description }}">
+            {% else %}
+              <span class="slide-inner">
+            {% endif %}
 
               {% if slide.image %}
                 <img class="slide-image" src="{{ slide.image }}" title="{{ slide.description }}" alt="{{ slide.description }}" />
@@ -19,7 +23,11 @@
                 </div>
               {% endif %}
 
-            </a>
+            {% if slide.link != '' %}
+              </a>
+            {% else %}
+              </span>
+            {% endif %}
           </div><!-- /.promo-slide -->
 
         {% endfor %}
