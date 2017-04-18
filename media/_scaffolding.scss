@@ -505,9 +505,9 @@ hr.separator {
 }
 
 .mfp-close-btn-in .mfp-close {
-  color: #fff;
+  color: $color-background-primary;
   cursor: pointer !important;
-  background: $brand-error;
+  background: $color-link-primary;
   opacity: 1;
   padding: 0;
   text-align: center;
