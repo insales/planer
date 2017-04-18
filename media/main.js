@@ -888,42 +888,24 @@ $(document).ready(function () {
     });
 
     EventBus.subscribe('update_items:insales:compares', function (data) {
-
       if (data.products.length > 0) {
         $compareCount.html(data.products.length);
-        if (!$compareCount.hasClass('active')) {
-          $compareCount.addClass('active');
-        }
+        $compareCount.addClass('active');
       } else {
-        if ($compareCount.hasClass('active')) {
-          $compareCount.removeClass('active');
-        }
+        $compareCount.removeClass('active');
       }
+    });
 
+    EventBus.subscribe('update_items:insales:compares', function (data) {
       if (Site.template == 'compare') {
-
-        if (data.products.length == 0) {
-          $('.table-compare')
-            .fadeOut('slow')
-            .html('<div class="notice notice-info text-center">' + Site.messages.comparisonIsEmpty + '</div>')
-            .fadeIn('slow');
-          $(compareViewToggler).hide();
-        } else {
-
-          console.log(compareUrl + ' ' + compareInner);
-
-          //$(compareWrapper).load(compareUrl + ' ' + compareInner, function () {
-
-            /*if (!$.cookie('compare-view')) {
-              $(sameRows).hide();
-              $(compareViewToggler).addClass('active');
-            }*/
-
-          //});
-
-        }
-
+        $(compareWrapper).load(compareWrapper + ' ' + compareInner, function () {
+          if (!$.cookie('compare-view')) {
+            $(sameRows).hide();
+            $(compareViewToggler).addClass('active');
+          }
+        });
       }
+
     });
 
   }());

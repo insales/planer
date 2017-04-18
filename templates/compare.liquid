@@ -2,76 +2,74 @@
 
 {% include 'page-header' %}
 
-<div id="js-compare-wrapper" class="compares primary-inner">
-  <div class="container">
+<div id="js-compare-wrapper" class="container compares primary-inner">
 
-    {% if products.size > 0 %}
+  {% if products.size > 0 %}
 
-      <div id="compare-inner primary-inner js-compare-inner">
+    <div id="js-compare-inner" class="compare-inner primary-inner">
+
+      {% for property in properties %}
+        {% unless property.differ? %}
+          {% assign same_trigger = true %}
+        {% endunless %}
+      {% endfor %}
+
+      {% if same_trigger %}
+        <div class="compare-toolbar">
+          <button type="button" class="button button-primary button-same-toggle js-same-toggle">
+            <i class="button-icon fa fa-eye-slash"></i>
+            <i class="button-icon fa fa-eye"></i>
+            <span class="button-text text-hide">{{ messages.hide_the_same }}</span>
+            <span class="button-text text-show">{{ messages.show_the_same }}</span>
+          </button>
+        </div>
+      {% endif %}
+
+      <table class="table table-compare js-compare-table">
+        <tr>
+          <td class="param-title">{{ messages.label_product }}</td>
+          {% for product in products %}
+            <td class="param-value" data-compared-id="{{ product.id }}">
+              <div class="product-title">
+                <a class="title-link" href="{{ product.url }}" title="{{ product.title }}">{{ product.title }}</a>
+              </div>
+            </td>
+          {% endfor %}
+        </tr>
+
+        <tr>
+          <td class="param-title">{{ messages.label_price }}</td>
+          {% for product in products %}
+            <td class="param-value" data-compared-id="{{ product.id }}">
+              <div class="product-prices">
+                {% if product.variants.size > 1 %}
+                 от <span class="price-min">{{ product.price_min | money }}</span> &mdash; до <span class="price-max">{{ product.price_max | money }}</span>
+                {% else %}
+                  <span class="price">{{ product.price | money }}</span>
+                {% endif %}
+              </div>
+            </td>
+          {% endfor %}
+        </tr>
+
+        <tr>
+          <td class="param-title">{{ messages.label_photo }}</td>
+          {% for product in products %}
+            <td class="param-value" data-compared-id="{{ product.id }}">
+              <div class="compare-image-wrapper">
+                <a class="compare-image-inner" href="{{ product.url }}" title="{{ product.title }}">
+                  <img class="compare-image" src="{{ product.images.first.medium_url }}" alt="{{ product.images.first.title }}" title="{{ product.images.first.title }}">
+                </a>
+              </div>
+            </td>
+          {% endfor %}
+        </tr>
 
         {% for property in properties %}
-          {% unless property.differ? %}
-          {% assign same_trigger = true %}
-          {% endunless %}
-        {% endfor %}
 
-        {% if same_trigger %}
-          <div class="compare-toolbar">
-            <button type="button" class="button button-primary button-same-toggle js-same-toggle">
-              <i class="button-icon fa fa-eye-slash"></i>
-              <i class="button-icon fa fa-eye"></i>
-              <span class="button-text text-hide">{{ messages.hide_the_same }}</span>
-              <span class="button-text text-show">{{ messages.show_the_same }}</span>
-            </button>
-          </div>
-        {% endif %}
+          <tr class="{% unless property.differ? %}same-row{% endunless %}">
 
-        <table class="table table-compare js-compare-table">
-          <tr>
-            <td class="param-title">{{ messages.label_product }}</td>
-            {% for product in products %}
-              <td class="param-value" data-compared-id="{{ product.id }}">
-                <div class="product-title">
-                  <a class="title-link" href="{{ product.url }}" title="{{ product.title }}">{{ product.title }}</a>
-                </div>
-              </td>
-            {% endfor %}
-          </tr>
-
-          <tr>
-            <td class="param-title">{{ messages.label_price }}</td>
-            {% for product in products %}
-              <td class="param-value" data-compared-id="{{ product.id }}">
-                <div class="product-prices">
-                  {% if product.variants.size > 1 %}
-                    от <span class="price-min">{{ product.price_min | money }}</span> &mdash; до
-                    <span class="price-max">{{ product.price_max | money }}</span>
-                  {% else %}
-                    <span class="price">{{ product.price | money }}</span>
-                  {% endif %}
-                </div>
-              </td>
-            {% endfor %}
-          </tr>
-
-          <tr>
-            <td class="param-title">{{ messages.label_photo }}</td>
-            {% for product in products %}
-              <td class="param-value" data-compared-id="{{ product.id }}">
-                <div class="compare-image-wrapper">
-                  <a class="compare-image-inner" href="{{ product.url }}" title="{{ product.title }}">
-                    <img class="compare-image" src="{{ product.images.first.medium_url }}" alt="{{ product.images.first.title }}" title="{{ product.images.first.title }}">
-                  </a>
-                </div>
-              </td>
-            {% endfor %}
-          </tr>
-
-          {% for property in properties %}
-
-            <tr class="{% unless property.differ? %}same-row{% endunless %}">
-
-              <td class="param-title">{{ property.title }}</td>
+            <td class="param-title">{{ property.title }}</td>
 
               {% for product in products %}
                 <td class="param-value" data-compared-id="{{ product.id }}">
@@ -112,13 +110,12 @@
 
       </div>
 
-    {% else %}
+  {% else %}
 
-      <div class="primary-inner">
-        <div class="notice notice-info text-center">{{ messages.comparison_is_empty }}</div>
-      </div>
+    <div id="js-compare-inner" class="primary-inner">
+      <div class="notice notice-info text-center">{{ messages.comparison_is_empty }}</div>
+    </div>
 
-    {% endif %}
+  {% endif %}
 
-  </div>
 </div>
