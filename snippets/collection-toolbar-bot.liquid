@@ -26,9 +26,9 @@
     </div><!-- /.collection-limit -->
 
     <input type="hidden" name="price_min"
-           value="{{ price_min }}" {% if price_min == coll_min %} disabled {% endif %}/>
+           value="{{ price_min }}" {% unless price_min %} disabled {% endunless %}/>
     <input type="hidden" name="price_max"
-           value="{{ price_max }}" {% if price_max == coll_max %} disabled {% endif %}/>
+           value="{{ price_max }}" {% unless price_max %} disabled {% endunless %}/>
 
     {% if order %}
       <input type="hidden" name="order" value="{{ order }}"/>
