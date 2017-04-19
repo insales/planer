@@ -618,8 +618,6 @@ $(document).ready(function () {
         type: "double",
         min: 0,
         max: 1000,
-        from: 200,
-        to: 500,
         onChange: function (data) {
           $inputFrom.val(data.from);
           $inputTo.val(data.to);
@@ -784,8 +782,7 @@ $(document).ready(function () {
     });
 
     EventBus.subscribe('update_items:insales:cart', function (data) {
-
-      if (data.discounts.length) {
+      if (data.discounts && data.discounts.length) {
         $discountComment.html('<div class="summ-caption discount-comment">Сумма заказа: <span class="js-shopcart-summ"> ' + Shop.money.format(data.items_price) + ' </span> <br>"' + data.discounts[0].description + '": <span class="js-discount-summ"> ' + Shop.money.format(data.discounts[0].amount) + ' </span> </div>');
       } else {
         $discountComment.html('');
@@ -888,6 +885,7 @@ $(document).ready(function () {
     });
 
     EventBus.subscribe('update_items:insales:compares', function (data) {
+
       if (data.products.length > 0) {
         $compareCount.html(data.products.length);
         $compareCount.addClass('active');
