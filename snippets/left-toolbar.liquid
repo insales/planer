@@ -6,7 +6,7 @@
 
       <input type="hidden" name="lang" value="{{ language.locale }}">
 
-      <input class="input-field search-input" type="text" placeholder="Поиск" name="q"  value="{% if search.query != empty %}{{ search.query }}{% endif %}"/>
+      <input class="input-field search-input" type="text" placeholder="Поиск" name="q" value="{% if search.query != empty %}{{ search.query }}{% endif %}"/>
 
       <button class="button button-circle is-gray search-button" type="submit">
         <i class="icon search-icon ion-ios-search"></i>
@@ -16,9 +16,15 @@
 
   </div><!-- /.search-widget-wrapper -->
 
-  {% if collections.size > 0 %}
+  {% capture start_time %}{{ 'now' | date: '%s.%L' }}{% endcapture %}
 
-    <ul class="collection-mobile-menu mobile-menu list-vertical">
+  {% capture mobile_menu_cache %}mobile_menu_{{ collections.last_updated_at }}{% endcapture %}
+
+  {% cache mobile_menu_cache %}
+
+    {% if collections.size > 0 %}
+
+      <ul class="collection-mobile-menu mobile-menu list-vertical">
 
         {% for link_lvl_1 in collections %}
 
@@ -28,7 +34,7 @@
           {% if link_lvl_1.current? %} {% assign link_active = true %} {% endif %}
           {% if link_lvl_1.subcollections.size > 0 %} {% assign link_dropdown = true %} {% endif %}
 
-          <li class="list-item menu-item {% if link_active %} active {% endif %} {% if link_dropdown %} dropdown {% endif %}">
+          <li class="list-item menu-item {% if link_dropdown %} dropdown {% endif %} {% if link_active %} is-active {% endif %}" data-handle="{{ link_lvl_1.handle }}">
 
             <a title="{{ link_lvl_1.title }}" href="{{ link_lvl_1.url }}" class="menu-link">
               <span class="link-text">{{ link_lvl_1.title }}</span>
@@ -50,7 +56,7 @@
                   {% if link_lvl_2.current? %} {% assign link_active = true %} {% endif %}
                   {% if link_lvl_2.subcollections.size > 0 %} {% assign link_dropdown = true %} {% endif %}
 
-                  <li class="list-item menu-item {% if link_active %} active {% endif %} {% if link_dropdown %} dropdown {% endif %}">
+                  <li class="list-item menu-item {% if link_dropdown %} dropdown {% endif %} {% if link_active %} is-active {% endif %}" data-handle="{{ link_lvl_2.handle }}">
 
                     <a title="{{ link_lvl_2.title }}" href="{{ link_lvl_2.url }}" class="menu-link">
                       <span class="link-text">{{ link_lvl_2.title }}</span>
@@ -67,9 +73,10 @@
                         {% for link_lvl_3 in link_lvl_2.subcollections %}
 
                           {% assign link_active = false %}
+
                           {% if link_lvl_3.current? %} {% assign link_active = true %} {% endif %}
 
-                          <li class="list-item menu-item {% if link_active %} active {% endif %}">
+                          <li class="list-item menu-item {% if link_active %} is-active {% endif %}" data-handle="{{ link_lvl_3.handle }}">
                             <a title="{{ link_lvl_3.title }}" href="{{ link_lvl_3.url }}" class="menu-link">
                               <span class="link-text">{{ link_lvl_3.title }}</span>
                             </a>
@@ -95,7 +102,9 @@
 
       </ul><!-- /.collection-mobile-menu -->
 
-  {% endif %}
+    {% endif %}
+
+  {% endcache %}
 
   <hr class="separator">
 

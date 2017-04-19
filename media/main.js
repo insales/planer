@@ -1,4 +1,22 @@
 /**
+ * Menus active check
+ * Хак, для улучшения работы меню - выделения активного элемента.
+ * Именно так - потому что теперь - меню кэшируется, и в нём нельзя использовать collection.current?
+ */
+(function () {
+
+  var currentHandle = $("meta[name='handle']").attr("content");
+
+  $('[data-handle="' + currentHandle + '"]').each(function(e){
+
+    $(this).addClass('active');
+    $(this).parents('.list-item').addClass('active');
+
+  });
+
+}());
+
+/**
  * Alertify init
  */
 (function () {
@@ -333,7 +351,7 @@ $(document).ready(function () {
         pagination: '.js-promo-slider-pagination',
         autoplay: sliderDelay,
         loop: true,
-        effect: 'fade',
+        effect: 'slide',
         paginationClickable: true,
         autoHeight: true,
         nextButton: '.js-promo-slider-next',
@@ -600,8 +618,6 @@ $(document).ready(function () {
         type: "double",
         min: 0,
         max: 1000,
-        from: 200,
-        to: 500,
         onChange: function (data) {
           $inputFrom.val(data.from);
           $inputTo.val(data.to);
@@ -766,8 +782,7 @@ $(document).ready(function () {
     });
 
     EventBus.subscribe('update_items:insales:cart', function (data) {
-
-      if (data.discounts.length) {
+      if (data.discounts && data.discounts.length) {
         $discountComment.html('<div class="summ-caption discount-comment">Сумма заказа: <span class="js-shopcart-summ"> ' + Shop.money.format(data.items_price) + ' </span> <br>"' + data.discounts[0].description + '": <span class="js-discount-summ"> ' + Shop.money.format(data.discounts[0].amount) + ' </span> </div>');
       } else {
         $discountComment.html('');
@@ -873,30 +888,20 @@ $(document).ready(function () {
 
       if (data.products.length > 0) {
         $compareCount.html(data.products.length);
-        if (!$compareCount.hasClass('active')) {
-          $compareCount.addClass('active');
-        }
+        $compareCount.addClass('active');
       } else {
-        if ($compareCount.hasClass('active')) {
-          $compareCount.removeClass('active');
-        }
+        $compareCount.removeClass('active');
       }
+    });
 
+    EventBus.subscribe('update_items:insales:compares', function (data) {
       if (Site.template == 'compare') {
-        if (data.products.length == 0) {
-          $('.table-compare')
-            .fadeOut('slow')
-            .html('<div class="notice notice-info text-center">' + Site.messages.comparisonIsEmpty + '</div>')
-            .fadeIn('slow');
-          $(compareViewToggler).hide();
-        } else {
-          $(compareWrapper).load(compareWrapper + ' ' + compareInner, function () {
-            if (!$.cookie('compare-view')) {
-              $(sameRows).hide();
-              $(compareViewToggler).addClass('active');
-            }
-          });
-        }
+        $(compareWrapper).load(compareWrapper + ' ' + compareInner, function () {
+          if (!$.cookie('compare-view')) {
+            $(sameRows).hide();
+            $(compareViewToggler).addClass('active');
+          }
+        });
       }
 
     });

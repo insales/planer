@@ -34,6 +34,10 @@
       <td> <input class="color" id="color_background_secondary" name="color_background_secondary" value="#ff5700" /> </td>
     </tr>
     <tr>
+      <td> <label for="body_background_color">{{ messages.s_body_background_color }}</label> </td>
+      <td> <input class="color" id="body_background_color" name="body_background_color" value="#ffffff" /> </td>
+    </tr>
+    <tr>
       <td> <label for="color_text_secondary">{{ messages.s_color_text_secondary }}</label> </td>
       <td> <input class="color" id="color_text_secondary" name="color_text_secondary" value="#ffffff" /> </td>
     </tr>
@@ -48,30 +52,6 @@
     <tr>
       <td> <label for="color_border_secondary">{{ messages.s_color_border_secondary }}</label> </td>
       <td> <input class="color" id="color_border_secondary" name="color_border_secondary" value="#ffffff" /> </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <h2>{{ messages.s_subheading_background_substrate }}</h2> </td>
-    </tr>
-    <tr>
-      <td> <label for="body_background_color">{{ messages.s_body_background_color }}</label> </td>
-      <td> <input class="color" id="body_background_color" name="body_background_color" value="#ffffff" /> </td>
-    </tr>
-    <tr>
-      <td> <label for="body_background_use">{{ messages.s_body_background_use }}</label> </td>
-      <td> <input name="body_background_use" id="body_background_use" type="checkbox" /> </td>
-    </tr>
-    <tr>
-      <td> <label for="body_background_type">{{ messages.s_body_background_type }}</label> </td>
-      <td> <select name="body_background_type" id="body_background_type">
-          <option value="default">{{ messages.default }}</option>
-          <option value="tile">{{ messages.tile }}</option>
-          <option value="stretch">{{ messages.stretch }}</option>
-        </select> </td>
-    </tr>
-    <tr>
-      <td> <label for="body_background_image.jpg">{{ messages.s_body_background_image }}</label> </td>
-      <td> <input name="body_background_image.jpg" id="body_background_image.jpg" type="file" data-max-width="2200" data-max-height="1800" /> </td>
     </tr>
     <tr>
       <td colspan="2">
@@ -121,6 +101,11 @@
   <legend>{{ messages.s_heading_logotype }}</legend>
   <table>
     <tr>
+      <td colspan="2">
+        <h2>{{ messages.s_subheading_logotype }}</h2>
+      </td>
+    </tr>
+    <tr>
       <td> <label for="logotype_type">{{ messages.s_logotype_type }}</label> </td>
       <td> <select name="logotype_type" id="logotype_type">
         <option value="image">{{ messages.image }}</option>
@@ -129,7 +114,7 @@
     </tr>
     <tr>
       <td> <label for="logotype_image">{{ messages.s_logotype_image }}</label> </td>
-      <td> <input name="logotype.jpg" id="logotype_image" type="file" data-max-width="200" data-max-height="80" /> </td>
+      <td> <input name="logotype.jpg" id="logotype_image" type="file" data-max-width="300" data-max-height="300" /> </td>
     </tr>
     <tr>
       <td> <label for="logotype_font_family">{{ messages.s_logotype_font_family }}</label> </td>
@@ -171,6 +156,11 @@
         <option value="35px">35 пикс.</option>
         <option value="40px">40 пикс.</option>
       </select> </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <h2>{{ messages.s_subheading_favicon }}</h2>
+      </td>
     </tr>
     <tr>
       <td> <label for="favicon.png">{{ messages.s_favicon }}</label> </td>

@@ -11,6 +11,7 @@
 =========================================*/
 .product-card {
   margin-bottom: 20px;
+  display: flex;
 
   .card-inner {
     background: #fff;
@@ -19,6 +20,7 @@
     padding: 20px;
     position: relative;
     overflow: hidden;
+    flex: 1 1 100%;
     z-index: z(card);
   }
 
@@ -91,7 +93,6 @@
   .product-title {
     flex: 0 0 60%;
     font-weight: 500;
-    height: 5em;
     overflow: hidden;
     text-overflow: ellipsis;
 
@@ -119,7 +120,7 @@
     .price,
     .old-price {
       display: block;
-      font-size: 1.2em;
+      font-size: 1em;
       white-space: nowrap;
     }
 
@@ -343,7 +344,7 @@
 }
 
 .bundle-products {
-  margin-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 @include media-min(xs) {
@@ -656,7 +657,7 @@
 
 .slider-label {
   cursor: default;
-  display: inline-block;
+  display: none;
   border-bottom: 1px solid $gray-lighter;
   font-size: $font-size-primary;
   padding: 5px;
@@ -797,10 +798,12 @@
   display: block;
   padding: 20px 20px 10px;
   text-align: center;
+  font-size: 0;
 
   > .menu-item {
     margin-right: 15px;
     padding-bottom: 10px;
+    font-size: $font-size-primary;
 
     > .menu-link {
       display: inline-block;
@@ -913,12 +916,13 @@
   }
 
   .submenu.level-2.dropdown-block {
-    background: $color-background-primary;
-    border: 1px solid $color-border-primary;
+    background: $color-background-secondary;
+    border: 1px solid $color-border-secondary;
     font-size: 1em;
     min-width: 220px;
     top: 28px;
     z-index: 1030;
+    text-align: left;
 
     > .menu-item {
       position: relative;
@@ -980,18 +984,24 @@
       }
 
       > .menu-link {
-        color: $color-link-primary;
+        color: $color-link-secondary;
         display: inline-block;
         padding: 10px;
         text-decoration: none;
+        padding-right: 3rem;
         width: 100%;
       }
+    }
+
+    .dropdown-icon {
+      position: absolute; top: 50%; right: 1rem;
+      transform: translate(-50%, 0);
     }
 
     > .menu-item.active > .menu-link,
     > .menu-item:hover > .menu-link,
     > .menu-item > .menu-link:hover {
-      color: $color-link-primary-hover;
+      color: $color-link-secondary;
 
       .link-text {
         text-decoration: underline;
@@ -1000,8 +1010,8 @@
   }
 
   .submenu.level-3.dropdown-block {
-    background: $color-background-primary;
-    border: 1px solid $color-border-primary;
+    background: $color-background-secondary;
+    border: 1px solid $color-border-secondary;
     font-size: 1em;
     min-width: 220px;
     top: 0;
@@ -1009,11 +1019,12 @@
     left: 105%;
     @include transition((visibility, opacity));
     z-index: 1030;
+    text-align: left;
 
     > .menu-item {
 
       > .menu-link {
-        color: $color-link-primary;
+        color: $color-link-secondary;
         display: inline-block;
         padding: 10px;
         text-decoration: none;
@@ -1024,7 +1035,7 @@
     > .menu-item.active > .menu-link,
     > .menu-item:hover > .menu-link,
     > .menu-item > .menu-link:hover {
-      color: $color-link-primary-hover;
+      color: $color-link-secondary-hover;
 
       .link-text {
         text-decoration: underline;
@@ -1240,8 +1251,8 @@
     .dropdown-button {
       cursor: pointer;
       display: inline-block;
-      background: $gray-lighter;
-      color: $color-text-primary;
+      background: $color-background-primary;
+      color: $color-link-primary;
       border-radius: 50%;
       width: 22px;
       height: 22px;

@@ -4,6 +4,14 @@
 .checkout-v1-wrapper {
   color: $color-text-primary;
 
+  #order_client_bonus_points {
+    text-align: center;
+    height: 37px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
   #orders_history {
 
     td {
@@ -181,8 +189,8 @@
   }
 
   .userbar, .set-title {
-    background: lighten($gray-lighter, 5%);
-    border-bottom: 1px solid $gray-lighter;
+    background: $color-background-primary;
+    border-bottom: 1px solid $color-border-primary;
     padding: 8px 11px 7px;
     font-weight: bold;
     vertical-align: middle;
@@ -191,7 +199,7 @@
   .userbar {
     font-weight: normal;
     margin-bottom: 30px;
-    border: 1px solid $gray-lighter;
+    border: 1px solid $color-border-primary;
 
     .links {
       word-spacing: 4px;
@@ -340,19 +348,19 @@
       border: 1px solid $gray-lighter;
       padding: 7px 10px;
       margin-bottom: 5px;
-      width: 100%;
+      width: 100% !important;
     }
     .textfield {
       border: 1px solid $gray-lighter;
       padding: 7px 10px;
       margin-bottom: 5px;
-      width: 100%;
+      width: 100% !important;
     }
     input {
       border: 1px solid $gray-lighter;
       padding: 7px 10px;
       margin-bottom: 5px;
-      max-width: 100%;
+      max-width: 100% !important;
     }
   }
 
@@ -516,6 +524,11 @@
     h3 {
       margin-top: 0;
     }
+
+    + div {
+      float: left;
+      margin-left: 1rem;
+    }
   }
 
   .register .field-content {
@@ -592,15 +605,15 @@
   }
 
   .table .highlited_row {
-    background: rgba(255, 255, 255, .1);
+    background: rgba(255, 255, 255, .1) !important;
   }
 
-  .green_status {
-    background: #E0FCE0 !important;
-  }
+  .table {
 
-  .grey_status {
-    background: #E8E8E8 !important;
+    td {
+      border-bottom: 1px solid $color-border-primary;
+      padding: 10px 0;
+    }
   }
 
   #logo_bg {
@@ -776,12 +789,19 @@
 }
 
 .co-button--checkout {
-  margin-left: 10px;
+  @media (max-width: 480px) {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
 }
 
 .co-checkout-order_form {
-  margin-top: 0;
+  margin-top: 0 !important;
   padding-left: 0 !important;
+
+  @media (max-width: 768px) {
+    padding-right: 0 !important;
+  }
 }
 
 .co-checkout-block--padded {
@@ -838,6 +858,7 @@
 }
 
 .co-input-field {
+  background-color: #fff;
   border: 1px solid $gray-lighter;
   color: $gray;
   border-radius: 0;
@@ -864,6 +885,118 @@
 .co-tabs-node--active {
   background: $color-link-primary;
   color: $color-background-primary;
+}
+
+.co-modal {
+  background: $color-background-primary;
+}
+
+.co-bonus_points-field {
+  height: 36px;
+  margin: 0 20px 0 0;
+}
+
+input[type="button"],
+.co-bonus_points-submit {
+  height: 37px;
+  margin: 0 20px 0 0;
+  padding: 0 10px;
+}
+
+
+/*  Typehead dropdown
+==========================================*/
+.tt-dropdown-menu {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  left: 0;
+  right: 0 !important;
+  //background-color: #fff;
+  border: 1px solid #ccc;
+  z-index: 1050;
+  -moz-box-shadow: 0px 4px 14px -4px #cccccc;
+  -webkit-box-shadow: 0px 4px 14px -4px #cccccc;
+  box-shadow: 0px 4px 14px -4px #cccccc;
+  border-radius: 0;
+
+  color: $color-text-primary;
+  background-color: $color-background-primary;
+  border-color: $color-border-primary;
+}
+.tt-dropdown-menu small,
+.tt-dropdown-menu .empty-message {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+}
+
+.twitter-typeahead {
+  width: 100%;
+}
+
+.twitter-typeahead .tt-query, .twitter-typeahead .tt-hint {
+  margin-bottom: 0;
+}
+
+.tt-suggestion, .tt-footer {
+  display: block;
+  position: relative;
+  padding: 1rem 1rem;
+  cursor: pointer;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.tt-suggestion:not(:last-child):after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  top: 100%;
+  border-bottom: 1px dotted #ccc;
+  z-index: 1;
+}
+
+.tt-suggestion:last-child {
+  margin-bottom: 0;
+}
+
+.tt-suggestion.tt-is-under-cursor, .tt-footer.tt-is-under-cursor {
+}
+
+.tt-suggestion.tt-is-under-cursor a, .tt-footer.tt-is-under-cursor a {
+
+}
+.tt-suggestion.tt-cursor, .tt-footer.tt-cursor {
+}
+
+.co-input--nested .co-input-label {
+  z-index: 3;
+  color: #333;
+}
+
+.co-input-select select,
+.co-input-field {
+  color: #333;
+  background-color: #fff;
+  max-width: 100%;
+}
+
+.co-input-select select {
+  cursor: pointer;
+}
+
+.co-input-select::after {
+  color: #333;
+  z-index: 3;
 }
 
 /*=========================================
@@ -914,4 +1047,14 @@
   background: $color-background-primary;
   border-radius: 0;
   color: $color-text-primary;
+}
+
+.m-modal-close {
+  background: none;
+
+  &::after {
+    content: '×';
+    color: #fff;
+    font-size: 30px;
+  }
 }

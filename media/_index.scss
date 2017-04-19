@@ -48,6 +48,7 @@
   }
 
   .promo-slide.swiper-slide {
+    background-color: $color-background-primary;
     overflow: hidden;
 
     .slide-image {
@@ -153,13 +154,17 @@
 .benefits {
   background: $body-background-color;
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 30px;
+}
+
+.benefit {
+  margin-bottom: 30px;
 }
 
 .benefits-inner {
   padding-top: 40px;
   padding-bottom: 40px;
+  text-align: center;
 }
 
 /*  Benefit
@@ -204,8 +209,10 @@
 }
 
 .benefit-title {
-  display: inline-block;
+  display: block;
   text-transform: uppercase;
+  line-height: 1.8em;
+  max-width: 100%;
 }
 
 .benefit-caption {

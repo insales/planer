@@ -18,19 +18,19 @@
 
         {% if filter.title %}
           <div class="page-header row">
-            <div class="header-text cell-xl-8">
+            <div class="header-text cell-xl-8 cell-xs-12">
               <h1>{{ filter.title | editable }}</h1>
             </div>
-            <div class="collection-sorting cell-xl-4">
+            <div class="collection-sorting cell-xl-4 cell-xs-12">
               {% include 'collection-sorting' %}
             </div>
           </div>
         {% else %}
           <div class="page-header row">
-            <div class="header-text cell-xl-8">
+            <div class="header-text cell-xl-8 cell-xs-12">
               <h1>{{ collection.title | editable }}</h1>
             </div>
-            <div class="collection-sorting cell-xl-4">
+            <div class="collection-sorting cell-xl-4 cell-xs-12">
               {% include 'collection-sorting' %}
             </div>
           </div>

@@ -128,7 +128,7 @@
 
   .tag-item {
     display: inline-block;
-    margin: 0 10px 10px;
+    margin: 0 .5em .5em;
   }
 }
 
@@ -137,15 +137,15 @@
   color: $color-background-primary;
   display: inline-block;
   font-size: .9em;
-  height: 25px;
-  padding: 4px 10px;
+  height: 2em;
+  padding: .3em 1em;
   position: relative;
   @include link-decor($color-background-primary, $color-background-primary, none, none);
 
   &:before {
     background: transparent;
-    border: 12.5px solid transparent;
-    border-right: 12.5px solid $color-link-primary;
+    border: 1em solid transparent;
+    border-right: 1em solid $color-link-primary;
     content: '';
     display: block;
     position: absolute; right: 100%; top: 0; bottom: 0;

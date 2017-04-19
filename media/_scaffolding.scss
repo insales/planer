@@ -47,6 +47,7 @@ body {
   font-family: $font-family-primary;
   font-size: $font-size-primary;
   font-weight: 300;
+  min-width: 320px;
 }
 
 select option:disabled {
@@ -55,6 +56,10 @@ select option:disabled {
 
 .primary-inner {
   background: $color-background-primary;
+}
+
+.page-content {
+  margin-bottom: 30px;
 }
 
 @if ($body-background-use == true) {
@@ -197,14 +202,18 @@ hr.separator {
 
 .button-action {
   padding: 15px 0;
+  color: $color-link-primary;
 
   .button-text {
-    color: $gray;
     border-bottom: 1px dashed;
   }
 
   &.is-bigger {
     font-size: 1.2em;
+  }
+
+  &:hover {
+    color: $color-link-primary-hover;
   }
 }
 
@@ -445,7 +454,7 @@ hr.separator {
 }
 
 .modal-inner {
-  background: $body-background-color;
+  background: $color-background-primary;
   color: $color-text-primary;
   padding: 30px;
 
@@ -501,9 +510,9 @@ hr.separator {
 }
 
 .mfp-close-btn-in .mfp-close {
-  color: #fff;
+  color: $color-background-primary;
   cursor: pointer !important;
-  background: $brand-error;
+  background: $color-link-primary;
   opacity: 1;
   padding: 0;
   text-align: center;
@@ -845,6 +854,16 @@ hr.separator {
   }
 }
 
+@include media-max(sm) {
+
+  .page-header {
+
+    .header-text {
+      margin-bottom: $grid-gutter;
+    }
+  }
+}
+
 /*  Pagination
 -----------------------------------------*/
 .pagination {
@@ -1146,7 +1165,7 @@ hr.separator {
 
     > .collapse-block {
       opacity: 1;
-      max-height: 1000px;
+      max-height: 3000px;
     }
   }
 }
@@ -1164,7 +1183,7 @@ hr.separator {
 
   .collapse-block.on-mobile {
     opacity: 1;
-    max-height: 1000px;
+    max-height: 3000px;
   }
 }
 
