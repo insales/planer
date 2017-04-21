@@ -983,10 +983,16 @@ input[type="button"],
   color: #333;
 }
 
-.co-input-select select,
+.co-input-select,
 .co-input-field {
-  color: #333;
   background-color: #fff;
+  color: #333;
+  max-width: 100%;
+}
+
+.co-input-select select {
+  color: #333;
+  background-color: transparent;
   max-width: 100%;
 }
 
@@ -996,7 +1002,7 @@ input[type="button"],
 
 .co-input-select::after {
   color: #333;
-  z-index: 3;
+  z-index: 0;
 }
 
 /*=========================================
