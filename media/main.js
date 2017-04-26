@@ -143,13 +143,13 @@
     EventBus.subscribe('update_variant:insales:product', function (data) {
 
       var searched = data.first_image.url;
-      $galleryTriggers.each(function(value, key){
-
-        if ($(this).data('link') == searched) {
-          $(this).click();
-        }
-
-      });
+      if (data.first_image.from_variant) {
+        $galleryTriggers.each(function(value, key){
+          if ($(this).data('link') == searched) {
+            $(this).click();
+          }
+        });
+      }
 
       $productFullInput.val(
         data.title.length ? productTitle + ' (' + data.title + ')' : productTitle
