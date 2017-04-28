@@ -154,16 +154,17 @@
 .benefits {
   background: $body-background-color;
   position: relative;
-  padding-top: 30px;
+  //padding-top: 30px;
 }
 
 .benefit {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .benefits-inner {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   text-align: center;
 }
 
@@ -177,7 +178,7 @@
   color: $color-text-secondary;
   text-decoration: none;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   align-items: center;
 }
 
@@ -186,9 +187,9 @@
   border: 1px solid $color-border-secondary;
   font-size: 0;
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  margin-bottom: 15px;
+  width: 80px;
+  height: 80px;
+  //margin-bottom: 10px;
   padding: 20px;
   text-align: center;
   position: relative;
@@ -213,6 +214,8 @@
   text-transform: uppercase;
   line-height: 1.8em;
   max-width: 100%;
+  padding-left: 0.5em;
+  text-align: left;
 }
 
 .benefit-caption {
@@ -387,6 +390,7 @@
 
   .news-link {
     color: $color-link-primary;
+    text-decoration: none;
   }
 
   .news-date {
@@ -450,9 +454,10 @@
 
     > .tabs-link {
       display: inline-block;
-      font-size: 1em;
+      font-size: 1.4em;
       padding: 0;
       @include link-decor($color-text-primary, $color-link-primary-hover, none, none);
+      text-transform: uppercase;
     }
   }
 
@@ -460,7 +465,7 @@
   > .tabs-item:hover > .tabs-link,
   > .tabs-item > .tabs-link:hover {
     color: $color-link-primary-hover;
-    text-decoration: underline;
+    //text-decoration: underline;
   }
 }
 
@@ -532,7 +537,8 @@
     font-weight: 100;
     text-transform: uppercase;
     font-size: 1.4em;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
 
   .category-title-inner {
