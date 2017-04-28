@@ -990,19 +990,19 @@ input[type="button"],
   max-width: 100%;
 }
 
-.co-input-select select {
-  color: #333;
-  background-color: transparent;
-  max-width: 100%;
-}
+.co-input-select {
+  select {
+    color: #333;
+    background-color: transparent;
+    max-width: 100%;
+    cursor: pointer;
+    z-index: 100;
+  }
 
-.co-input-select select {
-  cursor: pointer;
-}
-
-.co-input-select::after {
-  color: #333;
-  z-index: 0;
+  &:after {
+    color: #333;
+    z-index: 0;
+  }
 }
 
 /*=========================================

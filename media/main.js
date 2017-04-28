@@ -143,7 +143,7 @@
     EventBus.subscribe('update_variant:insales:product', function (data) {
 
       var searched = data.first_image.url;
-      if (data.first_image.from_variant) {
+      if (data.first_image.from_variant && !data.action.quantityState.change) {
         $galleryTriggers.each(function(value, key){
           if ($(this).data('link') == searched) {
             $(this).click();
