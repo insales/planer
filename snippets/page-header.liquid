@@ -25,16 +25,15 @@
   {% when 'product' %}
     {% assign page_title = product.title %}
 
+  {% when 'page' %}
+    {% assign page_title = page.title %}
+
 {% endcase %}
 
 <div class="page-header primary-inner is-simple">
   <div class="container">
     <h1>
-      {% if page_title != '' %}
-        {{ page_title }}
-      {% else %}
-        {{ title | editable }}
-      {% endif %}
+      {{ page_title }}
     </h1>
   </div>
 </div><!-- /.page-header -->
