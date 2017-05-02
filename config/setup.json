@@ -1,5 +1,4 @@
 {
-
   "collections": {
     "frontpage": "{{ messages.collection_frontpage }}",
     "popular": "{{ messages.collection_popular }}"
@@ -12,16 +11,13 @@
 
   "menu_items": {
     "main-menu": {
-      "{{ messages.page_about }}": "/page/about-us",
       "{{ messages.page_delivery }}": "/page/delivery",
       "{{ messages.page_payment }}": "/page/payment",
-      "{{ messages.page_blog }}": "/blogs/blog",
       "{{ messages.page_contacts }}": "/page/feedback"
     },
     "footer-menu": {
       "{{ messages.page_delivery }}": "/page/delivery",
       "{{ messages.page_payment }}": "/page/payment",
-      "{{ messages.page_blog }}": "/blogs/blog",
       "{{ messages.page_contacts }}": "/page/feedback"
     }
   },
@@ -37,7 +33,6 @@
   },
 
   "pages": {
-    "about-us": "{{ messages.page_about }}",
     "delivery": "{{ messages.page_delivery }}",
     "payment": "{{ messages.page_payment }}"
   },

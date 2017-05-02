@@ -990,24 +990,29 @@ input[type="button"],
   max-width: 100%;
 }
 
-.co-input-select select {
-  color: #333;
-  background-color: transparent;
-  max-width: 100%;
-}
+.co-input-select {
+  select {
+    color: #333;
+    background-color: transparent;
+    max-width: 100%;
+    cursor: pointer;
+    z-index: 100;
+  }
 
-.co-input-select select {
-  cursor: pointer;
-}
-
-.co-input-select::after {
-  color: #333;
-  z-index: 0;
+  &:after {
+    color: #333;
+    z-index: 0;
+  }
 }
 
 /*=========================================
   FAST CHECKOUT
 =========================================*/
+.m-modal--msg {
+  .m-modal-wrapper {
+    padding: 0.8rem;
+  }
+}
 .m-modal-button {
   font-size: $font-size-primary;
   background: $color-link-primary;
@@ -1056,11 +1061,15 @@ input[type="button"],
 }
 
 .m-modal-close {
-  background: none;
+  background: $color-link-primary;
+  top: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
 
   &::after {
     content: '×';
-    color: #fff;
+    color: $color-background-primary;
     font-size: 30px;
   }
 }
