@@ -1,0 +1,35 @@
+<!-- feedback -->
+{% assign data = block_lists.with_template['feedback'].feedback %}
+{% if data.blocks.size > 0 %}
+  <div class="feedback-wrapper container">
+    {% for block in data.blocks %}
+      <div class="feedback">
+        {% if block.heading and block.heading != '' %}
+          <div class="feedback-heading">
+            {{ block.heading | editable }}
+          </div>
+        {% endif %}
+
+        <form class="feedback-form form row js-widget-feedback" action="index.html" method="post">
+          <input type="hidden" name="from" value="{{ account.email }}">
+          <input type="hidden" name="content" value="Сообщение из виджета 'Форма заявки'">
+
+          <div class="form-row cell-xl-4 cell-xs-12">
+            <input type="text" name="name" value="" class="form-field" placeholder="{{ messages.field_name }}">
+          </div>
+
+          <div class="form-row cell-xl-4 cell-xs-12">
+            <input type="text" name="phone" value="" class="form-field" placeholder="{{ messages.field_phone }}">
+          </div>
+
+          <div class="form-row cell-xl-4 cell-xs-12">
+            <button type="submit" name="button" class="button button-primary">
+              <span class="button-text">{{ block.submit-text }}</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+<!-- /feedback -->
