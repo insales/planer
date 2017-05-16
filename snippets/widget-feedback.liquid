@@ -4,9 +4,9 @@
   <div class="feedback-wrapper container">
     {% for block in data.blocks %}
       <div class="feedback">
-        {% if block.heading and block.heading != '' %}
+        {% if block.title != '' %}
           <div class="feedback-heading">
-            {{ block.heading | editable }}
+            {{ block.title | editable }}
           </div>
         {% endif %}
 

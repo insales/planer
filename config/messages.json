@@ -136,6 +136,9 @@
     "block_list_social": "Соц.сети",
     "block_social_message": "Наполнение соц.ссылок редактируется в разделе \"<a href='/admin2/block_lists_and_blocks'>Блоки</a>\"",
 
+    "block_list_feedback": "Форма заявки",
+    "block_feedback_title": "Форма заявки",
+
     "site_name": "Название сайта",
 
     "link": "Ссылка",
@@ -398,6 +401,9 @@
 
     "block_list_social": "Social groups",
     "block_social_message": "Filling the social links is edited in the \"<a href='/admin2/block_lists_and_blocks'>Blocks</a>\"",
+
+    "block_list_feedback": "Feedback form",
+    "block_feedback_title": "Feedback form",
 
     "site_name": "Site name",
 
