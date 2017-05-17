@@ -746,6 +746,41 @@ $(document).ready(function () {
     });
   }());
 
+  /**
+  * FEEDBACK WIDGET
+  */
+  (function () {
+    var $widgetFeedback = $('.js-widget-feedback');
+
+    $widgetFeedback.validate({
+      errorClass: 'is-error',
+      rules: {
+        'name': {
+          required: true,
+          minlength: 3
+        },
+        'phone': {
+          required: true,
+          minlength: 13
+        }
+      },
+      submitHandler: function (form) {
+        var msg = $widgetFeedback.serializeObject();
+        console.log('--->>>', msg);
+
+        Shop.sendMessage(msg)
+          .done(function (response) {
+            alertify.success(response.notice);
+            $widgetFeedback.trigger('reset');
+          })
+          .fail(function (response) {
+            $.each(response.errors, function (i, val) {
+              alertify.error(val[0]);
+            });
+          });
+      }
+    });
+  }());
 
   /**
    * Cart
