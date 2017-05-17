@@ -65,6 +65,11 @@
     "contacts": {
       "title": "{{ messages.block_list_contacts }}",
       "blocks": ["phone","email"]
+    },
+    "feedback-form": {
+      "title": "{{ messages.block_list_feedback }}",
+      "block_template": "system-widget-feedback",
+      "blocks": ["feedbackform1"]
     }
   },
 
@@ -158,6 +163,11 @@
       "title": "Google+",
       "link": "https://plus.google.com/",
       "block_template": "system-social"
+    },
+    "feedbackform1": {
+      "title": "{{ messages.block_feedback_title }}",
+      "submit-text": "{{ messages.button_submit }}",
+      "block_template": "system-widget-feedback"
     }
   },
 
@@ -183,6 +193,10 @@
           {
             "widget_type": "special-categories-type",
             "data_handle": "special-categories"
+          },
+          {
+            "widget_type": "widget-feedback-type",
+            "data_handle": "feedback-form"
           }
         ]
       }
@@ -216,6 +230,13 @@
         "type": "block_list_widget_type",
         "snippet": "title-collections.liquid",
         "block_template": "system-collection"
+      },
+      {
+        "name": "{{ messages.block_list_feedback }}",
+        "handle": "widget-feedback-type",
+        "type": "block_list_widget_type",
+        "snippet": "widget-feedback.liquid",
+        "block_template": "system-widget-feedback"
       }
     ]
 
